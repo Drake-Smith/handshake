@@ -1,0 +1,30 @@
+{
+  "name": "handshake",
+  "version": "1.0.0",
+  "description": "MarketPlace App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewbkil/handshake.git"
+  },
+  "author": "HandShake,Inc.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewbkil/handshake/issues"
+  },
+  "homepage": "https://github.com/andrewbkil/handshake#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "chai": "^3.5.0",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.6",
+    "mocha": "^3.1.2",
+    "mysql": "^2.11.1",
+    "sequelize": "^3.24.3",
+    "sequelize-cli": "^2.4.0"
+  }
+}
