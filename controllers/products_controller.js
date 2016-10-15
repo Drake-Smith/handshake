@@ -26,16 +26,13 @@ router.get('/', function(req, res) {
 });
 
 router.post('/create', function (req, res) {
-  // SOLUTION:
-  // =========
-  // use the Cat model to create a cat based on what's
-  // passed in req.body (name, sleepy, user_id)
+ 
   models.Product.create({
     name: req.body.name,
     category: req.body.category,
     description: req.body.description,
     condition: req.body.condition,
-    estimated_cost: req.body.estimated_cost,
+    value: req.body.value,
     picture: req.body.picture,
     user_id: req.session.user_id
   })
@@ -45,42 +42,37 @@ router.post('/create', function (req, res) {
   });
 });
 
-router.put('/update/:id', function(req,res) {
+// router.put('/update/:id', function(req,res) {
  
-  // use the Cat model to trade a cat's sleepy status
-  // based on the boolean passed in req.body sleepy
-  // and the id of the cat (as passed in the url)
-  models.Product.update(
-  {
-    user_id: req.body.user_id
-  },
-  {
-    where: { id : req.params.id }
-  })
-  // connect it to this .then.
-  .then(function (result) {
-    res.redirect('/');
-  }, function(rejectedPromiseError){
+//   models.Product.update(
+//   {
+//     user_id: req.body.user_id
+//   },
+//   {
+//     where: { id : req.params.id }
+//   })
+//   // connect it to this .then.
+//   .then(function (result) {
+//     res.redirect('/');
+//   }, function(rejectedPromiseError){
 
-  });
-});
+//   });
+// });
 
 
-router.delete('/delete/:id', function(req,res) {
+// router.delete('/delete/:id', function(req,res) {
  
-  // use the Cat model to delete a cat
-  // based on the id passed in the url
-  models.Cat.destroy({
-    where: {
-      id: req.params.id
-    }
-  })
-  // connect it to this .then.
-  .then(function() {
-    res.redirect('/');
-  });
+//   models.Cat.destroy({
+//     where: {
+//       id: req.params.id
+//     }
+//   })
+//   // connect it to this .then.
+//   .then(function() {
+//     res.redirect('/');
+//   });
 
-});
+// });
 
 
 module.exports = router;
