@@ -3,14 +3,14 @@
 ### A market place  trading app which integrates a delivery system from a third party for exchanges from trader to trader.
 
 ## Technologies Used:
-*JavaScript
-*NodeJS
-*RESTful API
-*ExpressJS Server
-*SequelizeJS ORM
-*MySQL Database
-*HandleBars Templating
-*BootStrap HTML 
-*SASS 
-*MVC Paradigm
-*Heroku Deployment
+1. JavaScript
+2. NodeJS
+3. RESTful API
+4. ExpressJS Server
+5. SequelizeJS ORM
+6. MySQL Database
+7. HandleBars Templating
+8. BootStrap HTML 
+9. SASS 
+10. MVC Paradigm
+11. Heroku Deployment
