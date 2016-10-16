@@ -14,3 +14,10 @@
 9. SASS 
 10. MVC Paradigm
 11. Heroku Deployment
+
+## Contributers:
++ Andrew Kil
++ Ceejay Varias
++ Guy Pham
++ Drake Smith
++ Israel Niesen
