@@ -59,10 +59,12 @@ router.post('/create', function(req,res) {
 			bcrypt.genSalt(10, function(err, salt) {
 					bcrypt.hash(req.body.password, salt, function(err, hash) {
 						
-						// Using the User model, create a new user,
-						// storing the email they sent and the hash you just made
+						
 						models.User.create({
+							name: req.body.name
 							email: req.body.email,
+							phone: req.body.phone,
+							address:  req.body.address,
 							password_hash: hash
 						})
 						// In a .then promise connected to that create method,
@@ -77,8 +79,8 @@ router.post('/create', function(req,res) {
 							// we save the logged in status to the session
 		          req.session.logged_in = true;
 		          // the username to the session
-							req.session.username = user.username;
-							// the user id to the session
+				  req.session.username = user.username;
+				  // the user id to the session
 		          req.session.user_id = user.id;
 		          // and the user's email.
 		          req.session.user_email = user.email;
