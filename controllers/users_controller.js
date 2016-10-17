@@ -1,4 +1,4 @@
-var bcrypt = require('bcrypts');
+var bcrypt = require('bcrypt');
 var models = require('../models');
 var express = require('express');
 var router = express.Router();
@@ -61,7 +61,7 @@ router.post('/create', function(req,res) {
 						
 						
 						models.User.create({
-							name: req.body.name
+							name: req.body.name,
 							email: req.body.email,
 							phone: req.body.phone,
 							address:  req.body.address,
