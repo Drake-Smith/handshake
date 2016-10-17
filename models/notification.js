@@ -7,6 +7,8 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         // associations can be defined here
         Notification.hasOne(models.TradeOffer);
+       //Notification.hasMany(models.TradeOffer);
+
         
       }
     }
