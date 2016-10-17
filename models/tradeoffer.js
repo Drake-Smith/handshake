@@ -6,7 +6,9 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
-       TradeOffer.hasMany(models.Notification);
+       //TradeOffer.hasMany(models.Notification);
+       TradeOffer.belongsTo(models.Notification);
+
        // the next associations need to be reviewed please
        // TradeOffer.hasOne(models.User); user 1
        // TradeOffer.hasOne(models.User); user 2
