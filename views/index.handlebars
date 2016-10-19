@@ -1,4 +1,41 @@
 <div class="container">
+   {{!--  Add Product Form --}}
+
+    <div class="row">
+        <h1>Add a Product</h1>
+        <form class="create-update-form" action="/create" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="product-name" name="name">
+          </div>
+          <div class="form-group">
+            <label for="cateogry">Category</label>
+            <input type="text" id="category" name="category">
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" id="description" name="description">
+          </div>
+
+          <div class="form-group">
+            <label for="condition">Condition</label>
+            <input type="text" id="condition" name="condition">
+          </div>
+
+          <div class="form-group">
+            <label for="value">Value</label>
+            <input type="text" id="value" name="value">
+          </div>
+
+          <div class="form-group">
+            <label for="picture">Add Picture</label>
+            <input type="text" id="pic" name="picture">
+          </div>
+
+          <button type="submit">Add Item</button>
+        </form>
+    </div>
+
     <div class="row">
         <div class="col col-sm-6">
             <div class="panel panel-default">
