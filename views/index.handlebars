@@ -44,19 +44,25 @@
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        {{#each product}}
-                            {{#unless this.devoured}}
+                    <ul>
+                        {{#each products}}
                                 <div class="product col col-lg-6">
-                                    <div class="well">
-                                        {{> product/available-product}}
-                                    </div>
+                                        <li>
+                                        {{this.name}}
+                                        {{this.category}}
+                                         {{this.description}}
+                                         {{this.condition}}
+                                         {{this.value}}
+                                         {{this.picture}}
+                                        </li>
                                 </div>
-                            {{/unless}}
                         {{/each}}
+                    </ul>
                     </div>
                 </div>
             </div>
         </div>
+       
         <div class="col col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -65,13 +71,11 @@
                 <div class="panel-body">
                     <div class="row">
                         {{#each product}}
-                            {{#if this.devoured}}
                                 <div class="product col col-lg-6">
                                     <div class="well">
-                                        {{> product/devoured-product}}
+                        
                                     </div>
                                 </div>
-                            {{/if}}
                         {{/each}}
                     </div>
                 </div>
