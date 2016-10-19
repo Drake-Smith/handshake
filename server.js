@@ -1,6 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser')
 var methodOverride = require('method-override');
+var session = require('express-session');
 var expressHandleBars = require('express-handlebars');
 var path = require('path');
 
@@ -15,8 +17,8 @@ var app = express();
 app.use(methodOverride('_method'))
 
 // //allow sessions
-// app.use(session({ secret: 'app', cookie: { maxAge: 60000 }}));
-// app.use(cookieParser());
+app.use(session({ secret: 'app', cookie: { maxAge: 60000 }}));
+app.use(cookieParser());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -28,9 +28,11 @@ router.post('/login', function(req, res) {
 		if(user == null) {
 			res.redirect('/users/sign-in')
 		}
-	bcrypt.compare(req.body.password, user.password_hash, function(err, result) {
+	bcrypt.compare(req.body.password, user.password, function(err, result) {
 
 		if(result == true) {
+			console.log("sucessful")
+
 			req.session.logged_in = true;
 			req.session.username = user.username;
 			req.session.user_id = user.id;
@@ -38,6 +40,7 @@ router.post('/login', function(req, res) {
 
 			res.redirect('/');
 		} else {
+			console.log("users/sign-in")
 			res.redirect('/users/sign-in')
 		}
 	});
@@ -66,7 +69,7 @@ router.post('/create', function(req,res) {
 							email: req.body.email,
 							phone: req.body.phone,
 							address:  req.body.address,
-							password_hash: hash
+							password: hash
 						})
 						// In a .then promise connected to that create method,
 						// save the user's information to req.session
