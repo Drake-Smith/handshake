@@ -1,38 +1,38 @@
 <div class="container">
    {{!--  Add Product Form --}}
-
     <div class="row">
         <h1>Add a Product</h1>
         <form class="create-update-form" action="/create" method="POST">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="product-name" name="name">
-          </div>
-          <div class="form-group">
-            <label for="cateogry">Category</label>
-            <input type="text" id="category" name="category">
-          </div>
-          <div class="form-group">
-            <label for="description">Description</label>
-            <input type="text" id="description" name="description">
-          </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="product-name" name="name">
+            </div>
 
-          <div class="form-group">
-            <label for="condition">Condition</label>
-            <input type="text" id="condition" name="condition">
-          </div>
+            <div class="form-group">
+                <label for="cateogry">Category</label>
+                <input type="text" id="category" name="category">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description">
+            </div>
 
-          <div class="form-group">
-            <label for="value">Value</label>
-            <input type="text" id="value" name="value">
-          </div>
+            <div class="form-group">
+                <label for="condition">Condition</label>
+                <input type="text" id="condition" name="condition">
+            </div>
 
-          <div class="form-group">
-            <label for="picture">Add Picture</label>
-            <input type="text" id="pic" name="picture">
-          </div>
+            <div class="form-group">
+                <label for="value">Value</label>
+                <input type="text" id="value" name="value">
+            </div>
 
-          <button type="submit">Add Item</button>
+            <div class="form-group">
+                <label for="picture">Add Picture</label>
+                <input type="text" id="pic" name="picture">
+            </div>
+
+            <button type="submit">Add Item</button>
         </form>
     </div>
 
@@ -78,57 +78,6 @@
                                 </div>
                         {{/each}}
                     </div>
-                </div>
-            </div>
-        </div>
-        <!-- Create Marketplace Modal -->
-        <div class="modal fade marketplaceModal" tabindex="-1" role="dialog" aria-labelledby="marketplaceModal">
-            <div class="modal-dialog modal-lg" role="document">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">Items Traded</h5>
-                    </div>
-                    <form class="create-update-form" action="products/create" method="POST">
-                        <div class="trade-create modal-body">
-                            <div class="alert alert-info alert-dismissible" role="alert" style="display: none">
-                                <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Looking for a trade?
-                            </div>
-                            <div class="form-group">
-                                <label for="product_name">Product Name<a href="#" onclick="$('.alert').show()"><i class="fa fa-info-circle fa-fw"></i></a></label><br>
-                                <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Enter your product" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="image">Marketplace</label><br>
-                                <label class="radio-inline">
-                                    <input type="radio" name="image" id="inlineRadio1" value="assets/img/bed.jpg" required><img class="item-trade" src="assets/img/bed.jpg" alt="Bed">
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="image" id="inlineRadio2" value="assets/img/triumph.jpg" required><img class="item-trade" src="assets/img/triumph.jpg" alt="Triumph">
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="image" id="inlineRadio3" value="assets/img/applewatch.jpg" required><img class="item-trade" src="assets/img/applewatch.jpg" alt="Applewatch">
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="image" id="inlineRadio4" value="assets/img/macbook.jpg" required><img class="item-trade" src="assets/img/macbook.jpg" alt="Macbook Pro">
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="image" id="inlineRadio5" value="assets/img/panerai.jpg" required><img class="item-trade" src="assets/img/panerai.jpg" alt="Panerai">
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="image" id="inlineRadio6" value="assets/img/skateboard.jpg" required><img class="item-trade" src="assets/img/skateboard.jpg" alt="Skateboard">
-                                </label>
-
-                            </div>
-                            <div class="form-group">
-                                <input type="hidden" name="devoured" value="0">
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-md btn-success" type="submit">Confirm</button>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
