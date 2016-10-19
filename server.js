@@ -5,7 +5,8 @@ var expressHandleBars = require('express-handlebars');
 var path = require('path');
 
 // model controllers
-var application_controller = require('./controllers/users_controller');
+var users_controller = require('./controllers/users_controller');
+var products_controller = require('./controllers/products_controller');
 
 
 // express settings
@@ -39,7 +40,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // need to get this updated
 // app.use('/', application_controller);
 // app.use('/cats', cats_controller);
-// app.use('/users', users_controller);
+app.use('/users', users_controller);
+app.use('/', products_controller);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
