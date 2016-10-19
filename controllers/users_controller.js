@@ -3,7 +3,8 @@ var models = require('../models');
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function(req, res) {
+
+router.get('/new', function(req, res) {
 	res.render('users/new_users');
 });
 
@@ -94,3 +95,4 @@ router.post('/create', function(req,res) {
 		}
 	});
 });
+module.exports = router;
