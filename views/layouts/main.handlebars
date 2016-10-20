@@ -28,9 +28,9 @@
 			</div>
 			<div id="navbar-collapsed" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right center-block">
-					<li><a class="about" href="#" data-toggle="modal" data-target=".aboutModal">About</a></li>
+					{{!-- <li><a class="about" href="#" data-toggle="modal" data-target=".aboutModal">About</a></li> --}}
 					{{#unless logged_in}}
-						<li><a href="#" data-toggle="modal" data-target=".logInModal">Login</a></li>
+						<li><button type="button" class="btn navbar-btn btn-success" data-toggle="modal" data-target=".logInModal">Login</a></li>
 						<li><button type="button" class="btn navbar-btn btn-primary" data-toggle="modal" data-target=".signUpModal">Sign Up</button></li>
 					{{/unless}}
 					{{#if logged_in}}
@@ -51,8 +51,8 @@
 		<!--/.container-fluid -->
 	</nav>
 </div>
-<!-- "About" Modal -->
-{{!-- <div class="modal fade aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModal">
+{{!-- <!-- "About" Modal -->
+<div class="modal fade aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModal">
 	<div class="modal-dialog" role="document">
 		<!-- Modal content-->
 		<div class="modal-content">
@@ -70,7 +70,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> --}}
 <!-- Sign In Modal -->
 <div class="modal fade logInModal" tabindex="-1" role="dialog" aria-labelledby="logInModal">
 	<div class="modal-dialog modal-sm" role="document">
@@ -127,8 +127,8 @@
 				</div>
 			</form>
 		</div>
-	</div> --}}
-{{!-- </div> --}}
+	</div>
+</div>
 <br>
 <br>
 <br>
@@ -147,7 +147,7 @@
 
  </body>
 <!-- Jquery -->
-{{!-- <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
@@ -157,5 +157,5 @@
 		});
 	});
 </script>
- --}}
+
 </html>
