@@ -1,68 +1,103 @@
 <div class="container">
    {{!--  Add Product Form --}}
     <div class="row">
-        <h1>Add a Product</h1>
-        <form class="create-update-form" action="/create" method="POST">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="product-name" name="name">
-            </div>
 
-            <div class="form-group">
-                <label for="cateogry">Category</label>
-                <input type="text" id="category" name="category">
-            </div>
-            <div class="form-group">
-                <label for="description">Description</label>
-                <input type="text" id="description" name="description">
-            </div>
-
-            <div class="form-group">
-                <label for="condition">Condition</label>
-                <input type="text" id="condition" name="condition">
-            </div>
-
-            <div class="form-group">
-                <label for="value">Value</label>
-                <input type="text" id="value" name="value">
-            </div>
-
-            <div class="form-group">
-                <label for="picture">Add Picture</label>
-                <input type="text" id="pic" name="picture">
-            </div>
-
-            <button type="submit">Add Item</button>
-        </form>
-    </div>
-
-    <div class="row">
-        <div class="col col-sm-6">
+        <div class="col col-sm-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title text-center">Items Available</h3>
+                    <h3 class="panel-title text-center">Marketplace</h3>
                 </div>
                 <div class="panel-body">
-                    <div class="row">
-                    <ul>
-                        {{#each products}}
-                                <div class="product col col-lg-6">
-                                        <li>
-                                        {{this.name}}
-                                        {{this.category}}
-                                         {{this.description}}
-                                         {{this.condition}}
-                                         {{this.value}}
-                                         {{this.picture}}
-                                        </li>
-                                </div>
-                        {{/each}}
-                    </ul>
+                    {{#each products}}       
+                        <div class="product col col-lg-3">
+                             <ul>
+                                <li>
+                                Item: {{this.name}}
+                                </li>
+                                <li>
+                                Category: {{this.category}}
+                                </li>
+                                <li>
+                                 Description: {{this.description}}
+                                 </li>
+                                 <li>
+                                 Condition: {{this.condition}}
+                                 </li>
+                                 <li>
+                                 Value: {{this.value}}
+                                 </li>
+                                 <li>
+                                 Picture: {{this.picture}}
+                                </li>
+                            </ul>
+                        </div>      
+                    {{/each}}
+                    
                     </div>
                 </div>
             </div>
         </div>
-       
+
+        <div class="col-sm-6 col-sm-offset-3">
+            <h1>Add a Product</h1>
+            <form class="create-update-form" action="/create" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="product-name" name="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="cateogry">Category</label>
+                    {{!-- <input type="text" id="category" name="category"> --}}
+
+                    <select data-placeholder="" class="chosen-select all-ques" id="q1">
+                        <option value=""></option>
+                        <option value="electronics">Electronics</option>
+                        <option value="misc">Misc</option>
+                        <option value="home">Home</option>
+                        <option value="sports">Sports</option>
+                        <option value="Buttstuff">Buttstuff</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" name="description">
+                </div>
+
+                <div class="form-group">
+                    <label for="condition">Condition</label>
+                    <select data-placeholder="" class="chosen-select all-ques" id="condition">
+                        <option value=""></option>
+                        <option value="new">New</option>
+                        <option value="likenew">Like New</option>
+                        <option value="home">Good</option>
+                        <option value="sports">Used</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="value">Value</label>
+                    <select data-placeholder="" class="chosen-select all-ques" id="condition">
+                        <option value=""></option>
+                        <option value="new">$1000+</option>
+                        <option value="likenew">$500 - $1000</option>
+                        <option value="home">$150 - $500</option>
+                        <option value="sports">$50 - $150</option>
+                        <option value="">$0 - $50</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="picture">Add Picture URL</label>
+                    <input type="text" id="pic" name="picture">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add Item</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-heading">

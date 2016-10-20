@@ -14,6 +14,9 @@ module.exports = function(sequelize, DataTypes) {
        // TradeOffer.hasOne(models.User); user 2
        // TradeOffer.hasOne(models.Product); product 1
        // TradeOffer.hasOne(models.Product); product 2
+       
+       //TradeOffer.hasMany(models.User);
+       //TradeOffer.hasOne(models.Notification);
 
 
       }
