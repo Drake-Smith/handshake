@@ -1,4 +1,4 @@
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 var models = require('../models');
 var express = require('express');
 var router = express.Router();
@@ -81,15 +81,15 @@ router.post('/create', function(req,res) {
 							// we enter the user's session by setting properties to req.
 
 							// we save the logged in status to the session
-		          req.session.logged_in = true;
-		          // the username to the session
-				  req.session.username = user.username;
-				  // the user id to the session
-		          req.session.user_id = user.id;
-		          // and the user's email.
-		          req.session.user_email = user.email;
+							req.session.logged_in = true;
+							// the username to the session
+							req.session.username = user.name;
+							// the user id to the session
+							req.session.user_id = user.id;
+							// and the user's email.
+							req.session.user_email = user.email;
 
-		          // redirect to home on login
+							// redirect to home on login
 							res.redirect('/')
 						});
 					});

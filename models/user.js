@@ -7,12 +7,27 @@ module.exports = function(sequelize, DataTypes) {
     phone: {type: DataTypes.STRING, allowNull: false},
     address: {type: DataTypes.STRING, allowNull: false},
   }, {
+    underscored: true,
+    freezeTableName: true,
+    tableName: 'users',
     classMethods: {
       associate: function(models) {
         // associations can be defined here
 
-        User.hasMany(models.Product);
-        User.hasMany(models.Notification);
+        User.hasMany(models.Product, {
+          onDelete: "CASCADE",
+          hooks: true,
+          foreignKey: {
+            allowNull: false
+          }
+        });
+        User.hasMany(models.Notification, {
+          onDelete: "CASCADE",
+          hooks: true,
+          foreignKey: {
+            allowNull: false
+          }
+        });
       }
     }
   });
