@@ -8,13 +8,20 @@ module.exports = function(sequelize, DataTypes) {
     value: {type: DataTypes.INTEGER, allowNull: false},
     picture: {type: DataTypes.STRING, allowNull: false},
   }, {
+    underscored: true,
+    freezeTableName: true,
+    tableName: 'products',
     classMethods: {
       associate: function(models) {
         // associations can be defined here
 
         //Product.hasOne(models.User);
-        Product.belongsTo(models.User);
-        
+        Product.belongsTo(models.User, {
+          onDelete: "CASCADE",
+          foreignKey: {
+            allowNull: false
+          }
+        });
       }
     }
   });
