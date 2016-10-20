@@ -7,6 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     condition: {type: DataTypes.STRING, allowNull: false},
     value: {type: DataTypes.INTEGER, allowNull: false},
     picture: {type: DataTypes.STRING, allowNull: false},
+    // underscored: true
   }, {
     underscored: true,
     freezeTableName: true,
