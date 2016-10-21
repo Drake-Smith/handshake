@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     underscored: true,
     freezeTableName: true,
-    tableName: 'products',
+    tableName: 'Products',
     classMethods: {
       associate: function(models) {
         // associations can be defined here
