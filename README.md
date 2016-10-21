@@ -1,4 +1,4 @@
-# handshake, Inc.
+# handshake, Inc. ![alt text](https://github.com/andrewbkil/handshake/blob/master/public/assets/img/logo-green.png"Handshake Logo")
 ## Intro:
 ### Welcome to our sharing community. Trade stuff you no longer use for cool stuff you actually need! Collaborative consumption increases satisfaction, saves precious cash, helps your fellow humans, and decreases waste. Join Handshake now to start trading goods with others and help yourself, your community, and your planet.
 
