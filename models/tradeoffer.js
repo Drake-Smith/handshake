@@ -3,6 +3,9 @@ module.exports = function(sequelize, DataTypes) {
   var TradeOffer = sequelize.define('TradeOffer', {
     status: DataTypes.STRING
   }, {
+    underscored: true,
+    freezeTableName: true,
+    tableName: 'tradeoffers',
     classMethods: {
       associate: function(models) {
         // associations can be defined here
