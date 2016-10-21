@@ -70,12 +70,13 @@
 <div class="modal fade" id = "about" role="dialog">
     <div class="modal-dialog" role="document">
         <!-- Modal content-->
-        <div class="modal-content">
+        <div class="modal-content" style="background-color:#222;">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+
                 <h5 class="modal-title"><strong>What is Handshake?</strong></h5>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style="color:white">
                 <p>Handshake is an experiment in collaborative consumption...an attempt to help cool people save money, minimize waste, and bring together a fun sharing community!<br>
                 Why did we start it?<br>
                 Because.....<br>
@@ -87,6 +88,7 @@
                   5. All while saving money, helping others, and helping the planet!<br>
                   6. It is completely free!  No money exchanges hands, EVER!<br>
                 </p>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
@@ -99,19 +101,19 @@
     <div class="modal fade" id="login" role="dialog">
         <div class="modal-dialog modal-sm" role="document">
 
-            <div class="modal-content">
+            <div class="modal-content" style="background-color:#222;">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h5 class="modal-title"><strong>Login</strong></h5>
+                    <h5 class="modal-title" style="color:white"><strong>Login</strong></h5>
                 </div>
                 <form class="create-update-form" action="users/login" method="POST">
                     <div class="trade-create modal-body">
                         <div class="form-group">
-                            <label for="em">Email:</label>
+                            <label for="em"style="color:white">Email:</label>
                             <input type="text" class="form-control" id="em" name="email">
                         </div>
                         <div class="form-group">
-                            <label for="pass">Password:</label>
+                            <label for="pass"style="color:white">Password:</label>
                             <input type="password" class="form-control" id="pass" name="password">
                         </div>
                     </div>
@@ -126,33 +128,35 @@
     
 <!-- Sign Up Modal -->
 <div class="modal fade signup" id = "signup" role="dialog">
-	<div class="modal-dialog modal-md" role="document">
+	<div class="modal-dialog modal-sm" role="document">
 		<!-- Modal content-->
-		<div class="modal-content">
+		<div class="modal-content"style="background-color:#222;">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h5 class="modal-title"><strong>Sign Up And Start Trading Now!</strong></h5>
+
+				<h5 class="modal-title" style="color:white;"><strong>Sign Up And Start Trading Now!</strong></h5>
+
 			</div>
 			<form class="create-update-form" action="users/create" method="POST">
 				<div class="trade-create modal-body">
 					<div class="form-group">
-						<label for="name">name:</label>
+						<label for="name"style="color:white;">Name:</label>
 						<input type="text" class="form-control" id="un" name="name" required>
 					</div>
 					<div class="form-group">
-						<label for="em">Email:</label>
+						<label for="em"style="color:white;">Email:</label>
 						<input type="text" class="form-control" id="em" name="email" required>
 					</div>
 					<div class="form-group">
-						<label for="pass">Password:</label>
+						<label for="pass"style="color:white;">Password:</label>
 						<input type="password" class="form-control" id="pass" name="password" required>
 					</div>
           <div class="form-group">
-						<label for="phone">Phone:</label>
+						<label for="phone"style="color:white;">Phone:</label>
 						<input type="password" class="form-control" id="phone" name="phone" required>
 					</div>
           <div class="form-group">
-						<label for="address">Address:</label>
+						<label for="address"style="color:white;">Address:</label>
 						<input type="address" class="form-control" id="address" name="address" required>
 					</div>
 				</div>
