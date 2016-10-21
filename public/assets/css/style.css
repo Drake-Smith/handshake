@@ -147,3 +147,7 @@ p {
 .navbar-brand {
     padding: 0 15px;
 }
+
+.modal-backdrop {
+   background-color: black;
+}
