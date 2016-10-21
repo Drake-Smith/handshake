@@ -116,7 +116,8 @@ p {
   text-align: center;
 }
 
-body {
-  background-image: url("assets/img/background.jpg");
+
+.jumbotron {
+    background-color: transparent !important;   
 }
 
