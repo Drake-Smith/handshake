@@ -23,7 +23,7 @@
 + Heroku Deployment
 
 ## Contributers:
-+ Andrew Kil - [Portfolio](www.andrewkil.com) <email@andrewkil.com>
++ Andrew Kil - <https://www.andrewkil.com> <email@andrewkil.com>
 + Ceejay Varias
 + Guy Pham
 + Drake Smith
