@@ -10,17 +10,30 @@ router.get('/', function(req, res) {
   // This will let us show the cat and it's owner.
   models.Product.findAll({
     include: [ models.User ]
+    // where : { id: { $ne: req.session.user_id}}
   })
   // connect the findAll to this .then
   .then(function(products) {
     // grab the user info from our req.
     // How is it in our req?
     // This info gets saved to req via the users_controller.js file.
+    var ownerProducts = [];
+    var marketProducts = [];
+    for (var i = 0; i < products.length; i++) {
+      var prod = products[i];
+      if (prod.user_id == req.session.user_id) {
+        ownerProducts.push(prod);
+      }
+      else{
+        marketProducts.push(prod);
+      }
+    }
     res.render('index', {
       user_id: req.session.user_id,
       email: req.session.user_email,
       logged_in: req.session.logged_in,
-      products: products
+      owner_products: ownerProducts,
+      market_products: marketProducts
     });
   });
 });
