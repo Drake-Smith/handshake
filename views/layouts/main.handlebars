@@ -27,9 +27,9 @@
 
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li class="active"><a href="/">Home</a>
-                    </li>
-                    <li><a href="#">About</a>
+                    {{!-- <li class="active"><a href="/">Home</a>
+                    </li> --}}
+                    <li><a href ="#about" data-toggle="modal">About</a>
                     </li>
                     {{#if logged_in}}
                     <li><a href="users/sign-out" action="users/sign-out" method="POST">Sign Out</a>
@@ -57,6 +57,25 @@
         </div>
     </div>
   {{/unless}}
+
+  <!--About Modal-->
+<div class="modal fade" id = "about" role="dialog">
+    <div class="modal-dialog" role="document">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title"><strong>What is handshake?</strong></h5>
+            </div>
+            <div class="modal-body">
+                <p>Would you like to make a trade? Sign up or Log in to post your item. Shop the marketplace for an item you would like to trade by clicking on the trade button and wait for the other party to shake your hand to complete the deal with a handshake.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- Modal content-->
     <div class="modal fade" id="login" role="dialog">
