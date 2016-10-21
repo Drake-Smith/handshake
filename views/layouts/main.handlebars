@@ -54,18 +54,15 @@
             </div>
           </div>
           
-          <div class = "container">
-      {{#unless logged_in}}
-            <div class="jumbotron col-md-8 col-md-offset-2">
-                <h1 id="welcome"><strong>Handshake</strong></h1>
-                <p id="welcome"><strong>Welcome to our sharing community!</strong></p>
-                <p id="welcome"><strong>Trade stuff you no longer use for cool stuff you actually need! No Cash required!</strong></p>
-                <p id="welcome"><strong>Collaborative consumption increases satisfaction, saves precious cash, helps your fellow humans, and decreases waste.</strong></p>
-                <p id="welcome"><strong>Join Handshake now to start trading goods with others and help yourself, your community, and your planet.</strong></p>
-
-            </div>
+    <div class = "container">
+  {{#unless logged_in}}
+        <div class="jumbotron col-md-8 col-md-offset-2">
+            <h1 id="welcome" style="color:lightgreen"><strong>Handshake</strong></h1>
+            <p id="welcome"><strong>Welcome to our sharing community! Trade stuff you no longer use for cool stuff you actually need!  No Cash required! <br> Collaborative consumption increases satisfaction, saves precious cash, helps your fellow humans, and decreases waste. <br> Join <span style="color:lightgreen">Handshake</span> now to start trading goods with others and help yourself, your community, and your planet.</strong></p>
         </div>
-      {{/unless}}
+    </div>
+    {{/unless}}
+
 
       <!--About Modal-->
     <div class="modal fade" id = "about" role="dialog">
@@ -99,30 +96,31 @@
     </div>
 
         <!-- Modal content-->
-        <div class="modal fade" id="login" role="dialog">
-            <div class="modal-dialog modal-sm" role="document">
 
-                <div class="modal-content" style="background-color:#222;">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title" style="color:white"><strong>Login</strong></h5>
-                    </div>
-                    <form class="create-update-form" action="users/login" method="POST">
-                        <div class="trade-create modal-body">
-                            <div class="form-group">
-                                <label for="em"style="color:white">Email:</label>
-                                <input type="text" class="form-control" id="em" name="email">
-                            </div>
-                            <div class="form-group">
-                                <label for="pass"style="color:white">Password:</label>
-                                <input type="password" class="form-control" id="pass" name="password">
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-md btn-success" type="submit">Login</button>
-                        </div>
-                    </form>
-                </div>
+        <div class="modal-content" style="background-color:#222;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                <h2 class="modal-title" style="color:white;font-size:30px;text-align:center"><strong>What is <span style="color:lightgreen">Handshake?</strong></span></h2>
+            </div>
+            <div class="modal-body" style="color:white;">
+                <h4><span style="color:lightgreen">Handshake</span> is an experiment in collaborative consumption...an attempt to help cool people save money, minimize waste, and bring together a fun sharing community!<br>
+                Why did we start it?<br>
+                Because.....<br>
+                </h4>
+                <ul style="font-size: 15px">
+                  <li> People like you often collect too much stuff</li>
+                  <li>  That stuff collects too much dust</li>
+                  <li>  Other people need your stuff more than you do</li>
+                  <li>  You can exchange unused stuff for cooler stuff you will actually use!</li>
+                  <li>  All while saving money, helping others, and helping the planet!</li>
+                  <li>  It is completely free!  No money exchanges hands, EVER!</li>
+                </ul>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">OK</button>
+
             </div>
         </div>
 
@@ -135,30 +133,19 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                    <h5 class="modal-title" style="color:white;"><strong>Sign Up</strong></h5>
+                    <h2 class="modal-title" style="color:lightgreen"><strong>Login</strong></h2>
 
                 </div>
                 <form class="create-update-form" action="users/create" method="POST">
                     <div class="trade-create modal-body">
                         <div class="form-group">
-                            <label for="name"style="color:white;">Name:</label>
-                            <input type="text" class="form-control" id="un" name="name" required>
+
+                            <label for="em"style="color:white">Email:</label>
+                            <input type="text" class="form-control" id="em" name="email" placeholder="your@email.com"/>
                         </div>
                         <div class="form-group">
-                            <label for="em"style="color:white;">Email:</label>
-                            <input type="text" class="form-control" id="em" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="pass"style="color:white;">Password:</label>
-                            <input type="password" class="form-control" id="pass" name="password" required>
-                        </div>
-              <div class="form-group">
-                            <label for="phone"style="color:white;">Phone:</label>
-                            <input type="password" class="form-control" id="phone" name="phone" required>
-                        </div>
-              <div class="form-group">
-                            <label for="address"style="color:white;">Address:</label>
-                            <input type="address" class="form-control" id="address" name="address" required>
+                            <label for="pass"style="color:white">Password:</label>
+                            <input type="password" class="form-control" id="pass" name="password"placeholder="what is your secret password?">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -171,22 +158,62 @@
     </div>
     </div>
 
-    {{{body}}}
+    
+<!-- Sign Up Modal -->
+<div class="modal fade signup" id = "signup" role="dialog">
+	<div class="modal-dialog modal-sm" role="document">
+		<!-- Modal content-->
+		<div class="modal-content"style="background-color:#222;">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
 
-{{!--     <footer class="footer">
-        <div class="container">
-            <p class="text-center">Copyright (c) 2016</p>
-        </div>
-    </footer> --}}
+				<h2 class="modal-title" style="color:lightgreen;"><strong>Sign Up</strong></h2>
+
+			</div>
+			<form class="create-update-form" action="users/create" method="POST">
+				<div class="trade-create modal-body">
+					<div class="form-group">
+						<label for="name"style="color:white;">Name:</label>
+						<input type="text" class="form-control" id="un" name="name" placeholder="Full Name"required>
+					</div>
+					<div class="form-group">
+						<label for="em"style="color:white;">Email:</label>
+						<input type="text" class="form-control" id="em" name="email" placeholder="your@email.com"required>
+					</div>
+					<div class="form-group">
+						<label for="pass"style="color:white;">Password:</label>
+						<input type="password" class="form-control" id="pass" name="password" placeholder="secret password"required>
+					</div>
+          <div class="form-group">
+						<label for="phone"style="color:white;">Phone:</label>
+						<input type="phone" class="form-control" id="phone" name="phone" placeholder="123-456-7890"required>
+					</div>
+          <div class="form-group">
+						<label for="address"style="color:white;">Address:</label>
+						<input type="address" class="form-control" id="address" name="address" placeholder="123 Hollywood Dr. LA, CA 90210" required>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-md btn-success" type="submit">Start Trading Now!</button>
+				</div>
+			</form>
+		  </div>
+	  </div>
+  </div>
+</div>
+</div>
+
+{{{body}}}
 
 
-          <!-- Jquery -->
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/assets/javascript/app.js"></script>
+      <!-- Jquery -->
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/assets/javascript/app.js"></script>
 
 
-    </body>
+</body>
+
 
 </html>
