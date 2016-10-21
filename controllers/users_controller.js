@@ -34,7 +34,7 @@ router.post('/login', function(req, res) {
 			console.log("sucessful")
 
 			req.session.logged_in = true;
-			req.session.username = user.username;
+			req.session.username = user.name;
 			req.session.user_id = user.id;
 			req.session.user_email = user.email;
 
@@ -65,7 +65,7 @@ router.post('/create', function(req,res) {
 
 
 						models.User.create({
-							name: req.body.username,
+							name: req.body.name,
 							email: req.body.email,
 							phone: req.body.phone,
 							address:  req.body.address,

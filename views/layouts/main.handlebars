@@ -39,7 +39,6 @@
 
 
       <div class = "container">
-
             <div class = "jumbotron">
                 <h1>Welcome to Handshake!</h1>
                 <p>Would you like to make a trade? Sign up or Log in to post your item. Shop the marketplace for an item you would like to trade by clicking on the trade button and wait for the other party to shake your hand to complete the deal with a handshake.</p>
@@ -58,7 +57,7 @@
     <button type="button" class="close" data-dismiss="modal">&times;</button>
     <h5 class="modal-title"><strong>Login</strong></h5>
   </div>
-        <form class="create-update-form" action="/login" method="POST">
+        <form class="create-update-form" action="users/login" method="POST">
           <div class="trade-create modal-body">
             <div class="form-group">
               <label for="em">Email:</label>
@@ -86,11 +85,11 @@
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 				<h5 class="modal-title"><strong>Sign Up</strong></h5>
 			</div>
-			<form class="create-update-form" action="/create" method="POST">
+			<form class="create-update-form" action="users/create" method="POST">
 				<div class="trade-create modal-body">
 					<div class="form-group">
-						<label for="un">Username:</label>
-						<input type="text" class="form-control" id="un" name="username" required>
+						<label for="name">name:</label>
+						<input type="text" class="form-control" id="un" name="name" required>
 					</div>
 					<div class="form-group">
 						<label for="em">Email:</label>
@@ -118,6 +117,7 @@
   </div>
 </div>
 
+{{{body}}}
 
 
       <!-- Jquery -->

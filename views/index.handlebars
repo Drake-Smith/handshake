@@ -82,14 +82,12 @@
                 <div class="form-group">
                     <label for="cateogry">Category</label>
                     {{!-- <input type="text" id="category" name="category"> --}}
-
-                    <select data-placeholder="" class="chosen-select all-ques" id="q1">
+                    <select data-placeholder="" class="chosen-select form-control" id="category" name="category">
                         <option value=""></option>
                         <option value="electronics">Electronics</option>
                         <option value="misc">Misc</option>
                         <option value="home">Home</option>
                         <option value="sports">Sports</option>
-                        <option value="Buttstuff">Buttstuff</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -99,7 +97,7 @@
 
                 <div class="form-group">
                     <label for="condition">Condition</label>
-                    <select data-placeholder="" class="chosen-select all-ques" id="condition">
+                    <select data-placeholder="" class="chosen-select form-control" id="condition" name="condition">
                         <option value=""></option>
                         <option value="new">New</option>
                         <option value="likenew">Like New</option>
@@ -109,20 +107,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="value">Value</label>
-                    <select data-placeholder="" class="chosen-select all-ques" id="condition">
-                        <option value=""></option>
-                        <option value="new">$1000+</option>
-                        <option value="likenew">$500 - $1000</option>
-                        <option value="home">$150 - $500</option>
-                        <option value="sports">$50 - $150</option>
-                        <option value="">$0 - $50</option>
-                    </select>
+                    <label for="value">Estimated Value $</label>
+                    <input type="text" id="value" name="value">
                 </div>
 
                 <div class="form-group">
                     <label for="picture">Add Picture URL</label>
-                    <input type="text" id="pic" name="picture">
+                    <input type="text" id="pic" name="pic">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Add Item</button>
