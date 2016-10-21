@@ -40,7 +40,6 @@ router.post('/login', function(req, res) {
 
 			res.redirect('/');
 		} else {
-			console.log("users/sign-in")
 			res.redirect('/users/sign-in')
 		}
 	});

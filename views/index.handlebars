@@ -1,13 +1,17 @@
+{{#if logged_in}}
 <div class="container">
    {{!--  Add Product Form --}}
     <div class="row">
+
     <div class="col col-sm-12">
         <div class="col col-sm-6">
+
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title text-center">Marketplace</h3>
                 </div>
                 <div class="panel-body">
+
                     <form method="POST" action="request/{{this.id}}?_method=PUT" class="button-size" id="requestForm">
                         {{#each market_products}}       
                                 <div class="product col col-lg-3">
@@ -42,11 +46,13 @@
             </div>
         </div>
         <div class="col col-sm-6">
+
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title text-center">My Items</h3>
                 </div>
                 <div class="panel-body">
+
                     <form method="POST" action="offer/{{this.id}}?_method=PUT" class="button-size" id="offerForm">
                         {{#each owner_products}}      
                                 <div class="product col col-lg-3">
@@ -121,10 +127,12 @@
                                 </form>
                             </div> 
                         {{/if}}
+
                     {{/each}}
                 </div>
             </div>
         </div>
+
         <div class="col col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -165,11 +173,12 @@
                 </div>
             </div>
         </div> --}}
-    </div>
+    {{!-- </div> --}}
 
 
         <div class="col-sm-6 col-sm-offset-3">
             <h1>Add a Product</h1>
+
             <form class="create-update-form" action="/create" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -219,7 +228,7 @@
     </div>
 
     <div class="row">
-        <div class="col col-sm-6">
+        <div class="col col-sm-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title text-center">Items Traded</h3>
@@ -239,3 +248,4 @@
         </div>
     </div>
 </div>
+{{/if}}
