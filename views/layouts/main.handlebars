@@ -11,11 +11,7 @@
 {{!-- ************************BODY****************************** --}}
 
 <body>
-  <div class="fullscreen-bg">
-    <video id="bgVideo" preload="true" autoplay loop muted>
-     <source src="assets/video/Shop2.mp4" type="video/mp4">
-    </video>
-  </div>
+
 
     <div class="navbar navbar-inverse navbar-static-top">
         <div class="container">
@@ -58,6 +54,11 @@
       
       <div class = "container">
   {{#unless logged_in}}
+  <div class="fullscreen-bg">
+    <video id="bgVideo" preload="true" autoplay loop muted>
+     <source src="assets/video/Shop2.mp4" type="video/mp4">
+    </video>
+  </div>
         <div class="jumbotron col-md-8 col-md-offset-2">
             <h1 id="welcome" style="color:lightgreen"><strong>Handshake</strong></h1>
             <p id="welcome"><strong>Welcome to our sharing community! Trade stuff you no longer use for cool stuff you actually need!  No Cash required! <br> Collaborative consumption increases satisfaction, saves precious cash, helps your fellow humans, and decreases waste. <br> Join <span style="color:lightgreen">Handshake</span> now to start trading goods with others and help yourself, your community, and your planet.</strong></p>
