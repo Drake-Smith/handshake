@@ -1,58 +1,56 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Handshake | Delivery Integrated Market Place</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-</head>
+    <head>
+        <title>Handshake | Delivery Integrated Market Place</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link href="assets/css/style.css" rel="stylesheet">
+    </head>
 {{!-- ************************BODY****************************** --}}
+    <body>
+      <div class="fullscreen-bg">
+        <video id="bgVideo" preload="true" autoplay loop muted>
+         <source src="assets/video/Shop2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <a class="navbar-brand navbar-left" href="/"><img style="width: 75px; " src="assets/img/handshakelogo.jpg" alt="Handshake">
+                </a>
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-<body>
+                <div class="collapse navbar-collapse navbar-header navbar-right navHeaderCollapse">
 
+                    <ul class="nav navbar-nav navbar-right">
 
-    <div class="navbar navbar-inverse navbar-static-top">
-        <div class="container">
-            <a class="navbar-brand navbar-left" href="/"><img style="width: 75px; " src="assets/img/handshakelogo.jpg" alt="Handshake">
+                        {{!-- <li class="active"><a href="/">Home</a>
+                        </li> --}}
+                        <li><a href ="#about" data-toggle="modal"><strong>About</strong></a>
+                        </li>
+                        {{#if logged_in}}
+                        <li><a href="users/sign-out" action="users/sign-out" method="POST">Sign Out</a>
+                        </li>
+                        
+                        {{else}}
+                        <li><a href="#signup" data-toggle="modal"><strong>Sign Up</strong></a>
+                        </li>
+                        <li><a href="#login" data-toggle="modal"><strong>Login</strong></a>
+                        </li>
+                        {{/if}}
 
-            </a>
+                    </ul>
 
-
-            <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-            <div class="collapse navbar-collapse navHeaderCollapse">
-
-                <ul class="nav navbar-nav navbar-right">
-
-                    {{!-- <li class="active"><a href="/">Home</a>
-                    </li> --}}
-                    <li><a href ="#about" data-toggle="modal"><strong>About</strong></a>
-                    </li>
-                    {{#if logged_in}}
-                    <li><a href="users/sign-out" action="users/sign-out" method="POST">Sign Out</a>
-                    </li>
-                    
-                    {{else}}
-                    <li><a href="#signup" data-toggle="modal"><strong>Sign Up</strong></a>
-                    </li>
-                    <li><a href="#login" data-toggle="modal"><strong>Login</strong></a>
-                    </li>
-                    {{/if}}
-
-                </ul>
+                </div>
 
             </div>
-
-        </div>
-      </div>
-      
-      <div class = "container">
+          </div>
+          
+    <div class = "container">
   {{#unless logged_in}}
   <div class="fullscreen-bg">
     <video id="bgVideo" preload="true" autoplay loop muted>
@@ -62,15 +60,15 @@
         <div class="jumbotron col-md-8 col-md-offset-2">
             <h1 id="welcome" style="color:lightgreen"><strong>Handshake</strong></h1>
             <p id="welcome"><strong>Welcome to our sharing community! Trade stuff you no longer use for cool stuff you actually need!  No Cash required! <br> Collaborative consumption increases satisfaction, saves precious cash, helps your fellow humans, and decreases waste. <br> Join <span style="color:lightgreen">Handshake</span> now to start trading goods with others and help yourself, your community, and your planet.</strong></p>
-
         </div>
     </div>
-  {{/unless}}
+    {{/unless}}
 
-  <!--About Modal-->
-<div class="modal fade" id = "about" role="dialog">
-    <div class="modal-dialog" role="document">
-        <!-- Modal content-->
+
+      <!--About Modal-->
+    <div class="modal fade" id = "about" role="dialog">
+      <div class="modal-dialog" role="document">
+            <!-- Modal content-->
         <div class="modal-content" style="background-color:#222;">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -95,38 +93,10 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-warning" data-dismiss="modal">OK</button>
             </div>
-        </div>
+        </div>   
+      </div>
     </div>
-</div>
-
-    <!-- Modal content-->
-    <div class="modal fade" id="login" role="dialog">
-        <div class="modal-dialog modal-sm" role="document">
-
-            <div class="modal-content" style="background-color:#222;">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title" style="color:lightgreen"><strong>Login</strong></h2>
-                </div>
-                <form class="create-update-form" action="users/login" method="POST">
-                    <div class="trade-create modal-body">
-                        <div class="form-group">
-                            <label for="em"style="color:white">Email:</label>
-                            <input type="text" class="form-control" id="em" name="email" placeholder="your@email.com"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="pass"style="color:white">Password:</label>
-                            <input type="password" class="form-control" id="pass" name="password"placeholder="what is your secret password?">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-md btn-success" type="submit">Login</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
+    
     
 <!-- Sign Up Modal -->
 <div class="modal fade signup" id = "signup" role="dialog">
@@ -183,5 +153,6 @@
 
 
 </body>
+
 
 </html>
