@@ -9,13 +9,14 @@
 </head>
 {{!-- ************************BODY****************************** --}}
 
-
 <body>
     <div class="navbar navbar-inverse navbar-static-top">
         <div class="container">
             
             <a class="navbar-brand navbar-left" href="/"><img style="width: 50px;" src="assets/img/handshakelogo.jpg" alt="Handshake">
             </a>
+
+
             <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -46,15 +47,13 @@
             </div>
 
         </div>
-      </div>
-      
-      <div class = "container" style="background: url(assets/img/background-opac.png);
-    background-size: cover;background-repeat: no-repeat;">
+    </div>
 
   {{#unless logged_in}}
+    <div class="container">
         <div class="jumbotron">
-            <h1><STRONG>Welcome to Handshake!</STRONG></h1>
-            <p><strong>Would you like to make a trade? Sign up or Log in to post your item. Shop the marketplace for an item you would like to trade by clicking on the trade button and wait for the other party to shake your hand to complete the deal with a handshake.</strong></p>
+            <h1>Welcome to Handshake!</h1>
+            <p>Would you like to make a trade? Sign up or Log in to post your item. Shop the marketplace for an item you would like to trade by clicking on the trade button and wait for the other party to shake your hand to complete the deal with a handshake.</p>
         </div>
     </div>
   {{/unless}}
@@ -146,56 +145,16 @@
         </div>
     </div>
     </div>
-<!-- Sign Up Modal -->
-<div class="modal fade signup" id = "signup" role="dialog">
-	<div class="modal-dialog modal-sm" role="document">
-		<!-- Modal content-->
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h5 class="modal-title"><strong>Sign Up</strong></h5>
-			</div>
-			<form class="create-update-form" action="users/create" method="POST">
-				<div class="trade-create modal-body">
-					<div class="form-group">
-						<label for="name">name:</label>
-						<input type="text" class="form-control" id="un" name="name" required>
-					</div>
-					<div class="form-group">
-						<label for="em">Email:</label>
-						<input type="text" class="form-control" id="em" name="email" required>
-					</div>
-					<div class="form-group">
-						<label for="pass">Password:</label>
-						<input type="password" class="form-control" id="pass" name="password" required>
-					</div>
-          <div class="form-group">
-						<label for="phone">Phone:</label>
-						<input type="password" class="form-control" id="phone" name="phone" required>
-					</div>
-          <div class="form-group">
-						<label for="address">Address:</label>
-						<input type="address" class="form-control" id="address" name="address" required>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button class="btn btn-md btn-success" type="submit">Sign Up</button>
-				</div>
-			</form>
-		  </div>
-	  </div>
-  </div>
-</div>
-</div>
-{{{body}}}
 
-  </body>
-      <!-- Jquery -->
-<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {{{body}}}
 
 
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
+</body>
 
 </html>
