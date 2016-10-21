@@ -37,16 +37,16 @@
 
                         {{!-- <li class="active"><a href="/">Home</a>
                         </li> --}}
-                        <li><a href ="#about" data-toggle="modal"><strong>About</strong></a>
+                        <li><a href ="#about" data-toggle="modal">About</a>
                         </li>
                         {{#if logged_in}}
                         <li><a href="users/sign-out" action="users/sign-out" method="POST">Sign Out</a>
                         </li>
                         
                         {{else}}
-                        <li><a href="#signup" data-toggle="modal"><strong>Sign Up</strong></a>
+                        <li><a href="#signup" data-toggle="modal">Sign Up</a>
                         </li>
-                        <li><a href="#login" data-toggle="modal"><strong>Login</strong></a>
+                        <li><a href="#login" data-toggle="modal">Login</a>
                         </li>
                         {{/if}}
 
@@ -68,13 +68,15 @@
       
          <div class="main-area">
             <div class="jumbotron col-md-8 col-md-offset-2" style="background-color:transparent !important">
-                <h1 id="welcome" style="color:black;font-size: 100px">Handshake</h1>
+                <h1 id="welcome" style="color:black;font-size: 100px; font-weight: bold;">Handshake</h1>
             </div>
         </div>
 
         <div class="main-description jumbotron col-md-8 col-md-offset-2" style="display:none">
-            <h1 id="welcome" style="color:lightgreen"><strong>Handshake</strong></h1>
-            <p id="welcome"><strong>Welcome to our sharing community! Trade stuff you no longer use for cool stuff you actually need!  No Cash required! <br> Collaborative consumption increases satisfaction, saves precious cash, helps your fellow humans, and decreases waste. <br> Join <span style="color:lightgreen">Handshake</span> now to start trading goods with others and help yourself, your community, and your planet.</strong></p>
+            <h1 class="welcome" style="color:lightgreen"><strong>Handshake</strong></h1>
+            <p class="welcome"><strong>Welcome to our sharing community. Trade stuff you no longer use for cool stuff you actually need!</strong></p>
+            <p class="welcome">Collaborative consumption increases satisfaction, saves precious cash, helps your fellow humans, and decreases waste.</p>
+            <p class="welcome">Join <span style="color:lightgreen">Handshake</span> now to start trading goods with others and help yourself, your community, and your planet.</p>
         </div>
       </div>
 
