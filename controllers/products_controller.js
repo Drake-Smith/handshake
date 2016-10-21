@@ -55,6 +55,66 @@ router.post('/create', function (req, res) {
   });
 });
 
+// router.put('/request/:id', function (req, res) {
+//   models.Product.update(
+//   {
+//     requested: true
+//   },
+//   {
+//     where: { id : req.params.id }
+//   })
+//   .then(function (result) {
+//     res.redirect('/');
+//     }, function(rejectedPromiseError){
+
+//   });
+// });
+
+// router.put('/undo/request/:id', function (req, res) {
+//   models.Product.update(
+//   {
+//     requested: false
+//   },
+//   {
+//     where: { id : req.params.id }
+//   })
+//   .then(function (result) {
+//     res.redirect('/');
+//     }, function(rejectedPromiseError){
+
+//   });
+// });
+
+// router.put('/offer/:id', function (req, res) {
+//   models.Product.update(
+//   {
+//     offered: true
+//   },
+//   {
+//     where: { id : req.params.id }
+//   })
+//   .then(function (result) {
+//     res.redirect('/');
+//     }, function(rejectedPromiseError){
+
+//   });
+// });
+
+// router.put('/undo/offer/:id', function (req, res) {
+//   models.Product.update(
+//   {
+//     offered: false
+//   },
+//   {
+//     where: { id : req.params.id }
+//   })
+//   .then(function (result) {
+//     res.redirect('/');
+//     }, function(rejectedPromiseError){
+
+//   });
+// });
+
 // router.put('/update/:id', function(req,res) {
  
 //   models.Product.update(
