@@ -27,7 +27,7 @@ app.set('views', path.join(__dirname, 'views'));
 //set up handlebars
 var exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({
-    defaultLayout: 'main'
+    defaultLayout: 'main1'
 }));
 app.set('view engine', 'handlebars');
 
