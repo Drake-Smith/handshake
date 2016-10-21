@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Handshake | Delivery Integrated Market Place</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+{{!-- ************************BODY****************************** --}}
+
+<body>
+    <div class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            
+            <a class="navbar-brand navbar-left" href="/"><img style="width: 50px;" src="assets/img/handshakelogo.jpg" alt="Handshake">
+            </a>
+
+
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="collapse navbar-collapse navHeaderCollapse">
+
+                <ul class="nav navbar-nav navbar-right">
+
+                    {{!-- <li class="active"><a href="/">Home</a>
+                    </li> --}}
+                    <li><a href ="#about" data-toggle="modal">About</a>
+                    </li>
+                    {{#if logged_in}}
+                    <li><a href="users/sign-out" action="users/sign-out" method="POST">Sign Out</a>
+                    </li>
+                    
+                    {{else}}
+                    <li><a href="#signup" data-toggle="modal">Sign Up</a>
+                    </li>
+                    <li><a href="#login" data-toggle="modal">Login</a>
+                    </li>
+                    {{/if}}
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+
+  {{#unless logged_in}}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Welcome to Handshake!</h1>
+            <p>Would you like to make a trade? Sign up or Log in to post your item. Shop the marketplace for an item you would like to trade by clicking on the trade button and wait for the other party to shake your hand to complete the deal with a handshake.</p>
+        </div>
+    </div>
+  {{/unless}}
+
+  <!--About Modal-->
+<div class="modal fade" id = "about" role="dialog">
+    <div class="modal-dialog" role="document">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title"><strong>What is handshake?</strong></h5>
+            </div>
+            <div class="modal-body">
+                <p>Would you like to make a trade? Sign up or Log in to post your item. Shop the marketplace for an item you would like to trade by clicking on the trade button and wait for the other party to shake your hand to complete the deal with a handshake.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Modal content-->
+    <div class="modal fade" id="login" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5 class="modal-title"><strong>Login</strong></h5>
+                </div>
+                <form class="create-update-form" action="users/login" method="POST">
+                    <div class="trade-create modal-body">
+                        <div class="form-group">
+                            <label for="em">Email:</label>
+                            <input type="text" class="form-control" id="em" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="pass">Password:</label>
+                            <input type="password" class="form-control" id="pass" name="password">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-md btn-success" type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade signup" id="signup" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5 class="modal-title"><strong>Sign Up</strong></h5>
+                </div>
+                <form class="create-update-form" action="users/create" method="POST">
+                    <div class="trade-create modal-body">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="em">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="pass">Password:</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone:</label>
+                            <input type="text" class="form-control" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address:</label>
+                            <input type="text" class="form-control" id="address" name="address">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-md btn-success" type="submit">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    {{{body}}}
+
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
