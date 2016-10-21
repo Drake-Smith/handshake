@@ -2,7 +2,6 @@
 <div class="container">
    {{!--  Add Product Form --}}
     <div class="row">
-
         <div class="col col-sm-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -10,7 +9,7 @@
                 </div>
                 <div class="panel-body">
                     {{#each market_products}}       
-                        <div class="product col col-lg-3">
+                        <div class="product-div col-lg-3">
                              <ul>
                                 <li>
                                 Item: {{this.name}}
@@ -32,18 +31,20 @@
                                 </li>
                             </ul>
                         </div>      
-                    {{/each}}
-                    
-                    </div>
+                    {{/each}}  
                 </div>
-
-
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title text-center">My Items</h3>
                 </div>
                 <div class="panel-body">
                     {{#each owner_products}}       
-                        <div class="product col col-lg-3">
+                        <div class="product-div col-lg-3">
                              <ul>
                                 <li>
                                 Item: {{this.name}}
@@ -66,14 +67,15 @@
                             </ul>
                         </div>      
                     {{/each}}
-                    
-                    </div>
                 </div>
             </div>
         </div>
-    
-        <div class="col-sm-6 col-sm-offset-3">
-            <h1>Add a Product</h1>
+  
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center">Add a Product</h3>
+                </div>
             <form class="create-update-form" action="/create" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -114,7 +116,7 @@
 
                 <div class="form-group">
                     <label for="picture">Add Picture URL</label>
-                    <input type="text" id="pic" name="pic">
+                    <input type="text" id="pic" name="picture">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Add Item</button>
@@ -123,7 +125,7 @@
     </div>
 
     <div class="row">
-        <div class="col col-sm-6">
+        <div class="col col-sm-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title text-center">Items Traded</h3>

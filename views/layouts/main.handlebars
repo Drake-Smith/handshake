@@ -10,7 +10,6 @@
 </head>
 {{!-- ************************BODY****************************** --}}
 
-
 <body>
   <div class="fullscreen-bg">
     <video id="bgVideo" preload="true" autoplay loop muted>
@@ -20,9 +19,11 @@
 
     <div class="navbar navbar-inverse navbar-static-top">
         <div class="container">
-
             <a class="navbar-brand navbar-left" href="/"><img style="width: 75px; " src="assets/img/handshakelogo.jpg" alt="Handshake">
+
             </a>
+
+
             <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -56,12 +57,11 @@
       </div>
       
       <div class = "container">
-       
-
   {{#unless logged_in}}
         <div class="jumbotron col-md-8 col-md-offset-2">
             <h1 id="welcome"><strong>Welcome to Handshake!</strong></h1>
             <p id="welcome"><strong>Would you like to make a trade? Sign up or Log in to post your item. Shop the marketplace for an item you would like to trade by clicking on the trade button and wait for the other party to shake your hand to complete the deal with a handshake.</strong></p>
+
         </div>
     </div>
   {{/unless}}
@@ -155,15 +155,13 @@
   </div>
 </div>
 </div>
-{{{body}}}
-
-  </body>
-      <!-- Jquery -->
-<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {{{body}}}
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-
+</body>
 
 </html>
