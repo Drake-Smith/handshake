@@ -7,7 +7,14 @@ module.exports = function(sequelize, DataTypes) {
     condition: {type: DataTypes.STRING, allowNull: false},
     value: {type: DataTypes.INTEGER, allowNull: false},
     picture: {type: DataTypes.STRING, allowNull: false},
-    // underscored: true
+    offered: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    requested: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    }
   }, {
     underscored: true,
     freezeTableName: true,

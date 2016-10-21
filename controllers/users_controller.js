@@ -28,7 +28,7 @@ router.post('/login', function(req, res) {
 		if(user == null) {
 			res.redirect('/users/sign-in')
 		}
-	bcrypt.compare(req.body.password, user.password, function(err, result) {
+		bcrypt.compare(req.body.password, user.password, function(err, result) {
 
 		if(result == true) {
 			console.log("sucessful")
