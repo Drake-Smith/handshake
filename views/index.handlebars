@@ -1,12 +1,11 @@
 {{#if logged_in}}
 <div class="container">
    {{!--  Add Product Form --}}
-   <div class="jumbotron">
+   <div class="jumbotron jumbo-market">
         <div class="row">
 
-        <div class="col col-sm-12">
-            <div class="col col-sm-6">
-
+        {{!-- <div class="col col-sm-12"> --}}
+            <div class="col col-sm-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title text-center">Marketplace</h3>
@@ -46,6 +45,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col col-sm-6">
 
                 <div class="panel panel-default">
@@ -87,6 +88,61 @@
                     </div>
                 </div>
             </div>
+
+
+             <div class="col-sm-6">
+                <h3>Add a Product</h3>
+
+                <form class="create-update-form" action="/create" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="product-name" name="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cateogry">Category</label>
+                        {{!-- <input type="text" id="category" name="category"> --}}
+                        <select data-placeholder="" class="chosen-select form-control" id="category" name="category">
+                            <option value=""></option>
+                            <option value="electronics">Electronics</option>
+                            <option value="misc">Misc</option>
+                            <option value="home">Home</option>
+                            <option value="sports">Sports</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" id="description" name="description">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="condition">Condition</label>
+                        <select data-placeholder="" class="chosen-select form-control" id="condition" name="condition">
+                            <option value=""></option>
+                            <option value="new">New</option>
+                            <option value="likenew">Like New</option>
+                            <option value="home">Good</option>
+                            <option value="sports">Used</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="value">Estimated Value $</label>
+                        <input type="text" id="value" name="value">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="picture">Add Picture URL</label>
+                        <input type="text" id="pic" name="picture">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add Item</button>
+                </form>
+            </div>
+        </div>
+         </div>
+
+
             <div class="row">
                 <div class="col col-sm-12">
                     <button class="btn btn-success" id="tradeConfirm">Confirm Trade Request</button>
@@ -177,56 +233,7 @@
         {{!-- </div> --}}
 
 
-            <div class="col-sm-6 col-sm-offset-3">
-                <h1>Add a Product</h1>
-
-                <form class="create-update-form" action="/create" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="product-name" name="name">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cateogry">Category</label>
-                        {{!-- <input type="text" id="category" name="category"> --}}
-                        <select data-placeholder="" class="chosen-select form-control" id="category" name="category">
-                            <option value=""></option>
-                            <option value="electronics">Electronics</option>
-                            <option value="misc">Misc</option>
-                            <option value="home">Home</option>
-                            <option value="sports">Sports</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <input type="text" id="description" name="description">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="condition">Condition</label>
-                        <select data-placeholder="" class="chosen-select form-control" id="condition" name="condition">
-                            <option value=""></option>
-                            <option value="new">New</option>
-                            <option value="likenew">Like New</option>
-                            <option value="home">Good</option>
-                            <option value="sports">Used</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="value">Estimated Value $</label>
-                        <input type="text" id="value" name="value">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="picture">Add Picture URL</label>
-                        <input type="text" id="pic" name="picture">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Add Item</button>
-                </form>
-            </div>
-        </div>
+           
 
         <div class="row">
             <div class="col col-sm-4">
