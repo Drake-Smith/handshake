@@ -1,10 +1,8 @@
 # handshake, Inc. ![alt text](https://raw.githubusercontent.com/andrewbkil/handshake/master/public/assets/img/logo-green.png "Handshake Logo")
-## Intro:
-### Welcome to our sharing community. Trade stuff you no longer use for cool stuff you actually need! Collaborative consumption increases satisfaction, saves precious cash, helps your fellow humans, and decreases waste. Join Handshake now to start trading goods with others and help yourself, your community, and your planet.
+## Intro: </br> Welcome to our sharing community. Trade stuff you no longer use for cool stuff you actually need! Collaborative consumption increases satisfaction, saves precious cash, helps your fellow humans, and decreases waste. Join Handshake now to start trading goods with others and help yourself, your community, and your planet.
 
-## Description:
-### Handshake is an experiment in collaborative consumption...an attempt to help cool people save money, minimize waste, and bring together a fun sharing community!
-###Because.....
+## Description: </br> Handshake is an experiment in collaborative consumption...an attempt to help cool people save money, minimize waste, and bring together a fun sharing community!
+Because.....
 1. People like you often collect too much stuff
 2. That stuff collects too much dust
 3. Other people need your stuff more than you do
