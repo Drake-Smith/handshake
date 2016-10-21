@@ -1,117 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<!-- Font Awesome CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-	<!-- Custom CSS -->
-	<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-	<title>Handshake | Delivery Integrated Market Place</title>
-</head>
+<html>
+  <head>  
+  <title>Handshake | Delivery Integrated Market Place</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+  </head>
 {{!-- ************************BODY****************************** --}}
-<body>
-<!-- Fixed navbar -->
-<div class="container nav-img">
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapsed">
-		          <span class="sr-only">Toggle navigation</span>
-		          <span class="icon-bar"></span>
-		          <span class="icon-bar"></span>
-		          <span class="icon-bar"></span>
-		        </button>
-				<a class="navbar-brand" href="/"><img style="width: 100px;" src="../../assets/img/handshakelogo.jpg" alt="Handshake">Handshake
-				</a>
-			</div>
-			<div id="navbar-collapsed" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-right center-block">
-					{{!-- <li><a class="about" href="#" data-toggle="modal" data-target=".aboutModal">About</a></li> --}}
-					{{#unless logged_in}}
-						<li><button type="button" class="btn navbar-btn btn-success" data-toggle="modal" data-target=".logInModal">Login</a></li>
-						<li><button type="button" class="btn navbar-btn btn-primary" data-toggle="modal" data-target=".signUpModal">Sign Up</button></li>
-					{{/unless}}
-					{{#if logged_in}}
-						<ul class="nav navbar-nav">
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Signed in as {{username}} <span class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="/users/sign-out">Sign Out</a></li>
-								</ul>
-							</li>
-							<li><button type="button" class="btn navbar-btn btn-primary center-block" data-toggle="modal" data-target=".marketplaceModal">Make a trade</button></li>
-						</ul>
-					{{/if}}
-				</ul>
-			</div>
-			<!--/.nav-collapse -->
-		</div>
-		<!--/.container-fluid -->
-	</nav>
+  
+  <body>
+      <div class= "navbar navbar-inverse navbar-static-top">
+        <div class="container">
+
+          <a class="navbar-brand navbar-left" href="/"><img style="width: 50px;" src="assets/img/handshakelogo.jpg" alt="Handshake"></a>
+  
+
+            <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+                <span class = "icon-bar"></span>
+                <span class = "icon-bar"></span>
+                <span class = "icon-bar"></span>
+            </button>
+
+            <div class = "collapse navbar-collapse navHeaderCollapse">
+
+              <ul class = "nav navbar-nav navbar-right">
+
+                  <li class = "active"><a href ="#">Home</a></li>
+                  <li><a href ="#">About</a></li>
+                  <li><a href ="#signup" data-toggle="modal">Sign Up</a></li>
+                  <li><a href ="#login" data-toggle="modal">Login</a></li>
+
+              </ul>
+
+            </div>
+
+        </div>
+      </div>
+
+
+      <div class = "container">
+
+            <div class = "jumbotron">
+                <h1>Welcome to Handshake!</h1>
+                <p>Would you like to make a trade? Sign up or Log in to post your item. Shop the marketplace for an item you would like to trade by clicking on the trade button and wait for the other party to shake your hand to complete the deal with a handshake.</p>
+              <div class = "buttons">
+                <a class = "btn btn-success">Make a trade?</a>
+              <a class = "btn btn-info">Signup/Login</a>
+            </div>
+        </div>
+      </div>
+
+      <div class = "modal fade" id = "login" role = "dialog">
+        <div class="modal-dialog modal-sm" role="document">
+<!-- Modal content-->
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h5 class="modal-title"><strong>Login</strong></h5>
+  </div>
+        <form class="create-update-form" action="/users/login" method="POST">
+          <div class="trade-create modal-body">
+            <div class="form-group">
+              <label for="em">Email:</label>
+              <input type="text" class="form-control" id="em" name="email">
+            </div>
+            <div class="form-group">
+              <label for="pass">Password:</label>
+              <input type="password" class="form-control" id="pass" name="password">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-md btn-success" type="submit">Login</button>
+          </div>
+        </form>
+    </div>
+  </div>
 </div>
-{{!-- <!-- "About" Modal -->
-<div class="modal fade aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModal">
-	<div class="modal-dialog" role="document">
+
+<!-- Sign Up Modal -->
+<div class="modal fade signup" id = "signup" role="dialog">
+	<div class="modal-dialog modal-sm" role="document">
 		<!-- Modal content-->
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h5 class="modal-title">What is handshake?</h5>
+				<h5 class="modal-title"><strong>Sign Up</strong></h5>
 			</div>
-			<div class="modal-body">
-				<p><strong>Handshake</strong> is a Marketplace where you can post anything for trade.</p>
-				<br />
-				<p><strong>Login</strong> or <strong>Sign Up</strong> to make a trade .</p>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
-			</div>
-		</div>
-	</div>
-</div> --}}
-<!-- Sign In Modal -->
-<div class="modal fade logInModal" tabindex="-1" role="dialog" aria-labelledby="logInModal">
-	<div class="modal-dialog modal-sm" role="document">
-		<!-- Modal content-->
-		{{>sign_in}}
-	</div>
+			<form class="create-update-form" action="/users/create" method="POST">
+				<div class="trade-create modal-body">
+					<div class="form-group">
+						<label for="un">Username:</label>
+						<input type="text" class="form-control" id="un" name="username" required>
+					</div>
+					<div class="form-group">
+						<label for="em">Email:</label>
+						<input type="text" class="form-control" id="em" name="email" required>
+					</div>
+					<div class="form-group">
+						<label for="pass">Password:</label>
+						<input type="password" class="form-control" id="pass" name="password" required>
+					</div>
+          <div class="form-group">
+						<label for="phone">Phone:</label>
+						<input type="password" class="form-control" id="phone" name="phone" required>
+					</div>
+          <div class="form-group">
+						<label for="address">Address:</label>
+						<input type="address" class="form-control" id="address" name="address" required>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-md btn-success" type="submit">Sign Up</button>
+				</div>
+			</form>
+		  </div>
+	  </div>
+  </div>
 </div>
-<!-- Sign Up Modal -->
-<div class="modal fade signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModal">
-	<div class="modal-dialog modal-sm" role="document">
-		<!-- Modal content-->
-		{{>new_users}}
-	</div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-	{{{ body }}}
 
 
 
-<footer class="footer">
-
-</footer>
-
- </body>
-<!-- Jquery -->
+      <!-- Jquery -->
 <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-	$(function() {
-		$("[data-hide]").on("click", function() {
-			$("." + $(this).attr("data-hide")).hide();
-		});
-	});
-</script>
 
+
+  </body>
 </html>
