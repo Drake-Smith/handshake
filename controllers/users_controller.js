@@ -19,7 +19,7 @@ router.get('/sign-out', function(req, res) {
 });
 
 
-//login 
+//login
 router.post('/login', function(req, res) {
 	models.User.findOne({
 		where: {email: req.body.email}
@@ -62,10 +62,10 @@ router.post('/create', function(req,res) {
 			// then use that salt to hash the user's password.
 			bcrypt.genSalt(10, function(err, salt) {
 					bcrypt.hash(req.body.password, salt, function(err, hash) {
-						
-						
+
+
 						models.User.create({
-							name: req.body.name,
+							name: req.body.username,
 							email: req.body.email,
 							phone: req.body.phone,
 							address:  req.body.address,
