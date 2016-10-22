@@ -4,17 +4,17 @@
         <source src="assets/video/Shop.mp4" type="video/mp4">
     </video>
 </div>
+{{!-- TRADE MODAL BEGIN --}}
+<!-- Login Modal content-->
+   <div class="modal fade trade" id="trade" role="dialog">
+       <div class="modal-dialog modal-sm" role="document">
 
-<div class="container">
-   {{!--  Add Product Form --}}
-    <div class="row">
-
-        <div class="col col-sm-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title text-center">Trade Offers</h3>
-                </div>
-                <div class="panel-body">
+           <div class="modal-content" style="background-color:#222;">
+               <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h2 class="modal-title" style="color:lightgreen"><strong>Trade Offers</strong></h2>
+               </div>
+              <div class="panel-body">
                     {{#each offers}}       
                         <div class="product col col-lg-3">
                              <ul>
@@ -45,11 +45,11 @@
                     {{/each}}
                     
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+           </div>
+       </div>
+   </div>
+   {{!-- TRADE MODAL ENDS --}}
 
 
 <div class="container">
