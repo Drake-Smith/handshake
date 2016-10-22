@@ -3,20 +3,20 @@ var express = require('express');
 var router  = express.Router();
 
 
-router.get('/offers', function(req, res) {
+// router.get('/offers', function(req, res) {
 
-  models.TradeOffer.findAll({
-    where: {
-    	status: "offered",
-    	buyer_id: req.session.user_id
-    }
-  })
-  .then(function(offers) {
-    res.render('exchange/trade', {
-      offers: offers
-    });
-  });
-});
+//   models.TradeOffer.findAll({
+//     where: {
+//     	status: "offered",
+//     	buyer_id: req.session.user_id
+//     }
+//   })
+//   .then(function(offers) {
+//     res.render('exchange/trade', {
+//       offers: offers
+//     });
+//   });
+// });
 
 router.post('/create', function (req, res) {
  
