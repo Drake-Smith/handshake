@@ -136,7 +136,7 @@ p {
 .jumbo-market {
     margin-top: 0;
     opacity: 1;
-    background-color: gray;
+    background-color: black;
 }
 
 #bgVideo {
@@ -194,15 +194,21 @@ p {
     }
 }
 .each-product {
-    float: left;
+    /*float: left;*/
+    display: inline-block;
     padding: 15px;
+}
+
+.fuck {
     overflow-x: scroll;
     overflow-y: hidden;
 }
 
 .each-user-own-product {    
-    float: left;
+    /*float: left;*/
+    display:inline-block;
     padding: 15px;
+
 }
 
 /*img:hover .product-info {
@@ -212,10 +218,18 @@ p {
 .product-info > p {
     font-size: 12px;
     color: black;
+   
 }
 .product-info {
     background-color: white;
+     border-radius: 10px;
+}
+.product-img {
+     border-radius: 10px;
 }
 
+#market-font {
+    color: lightgreen;
+}
 
     
