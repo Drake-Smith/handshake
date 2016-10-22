@@ -7,14 +7,14 @@
 {{!-- TRADE MODAL BEGIN --}}
 <!-- Login Modal content-->
    <div class="modal fade trade" id="trade" role="dialog">
-       <div class="modal-dialog modal-md" role="document">
+       <div class="modal-dialog modal-lg" role="document">
 
            <div class="modal-content" style="background-color:#222;">
                <div class="modal-header">
                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                    <h2 class="modal-title" style="color:lightgreen"><strong>Trade Offers</strong></h2>
                </div>
-              <div class="panel-body">
+              <div class="panel-body" id="trade-body">
                     {{#each offers}}       
                         <div class="product col col-md-12">
                              <ul style="padding:0">
@@ -28,18 +28,7 @@
                                 <img class="product-img"src="{{this.requestPicture}}" style="width: 200px; height: 200px;">
                                 </div>   
                                 </li>
-                               {{!--  <li>
-                                Offered by: {{this.buyer_id}}
-                                </li>
-                                <li>
-                                Offered to: {{this.seller_id}}
-                                </li>
-                                <li>
-                                Offered item: {{this.buyer_product_id}}
-                                 </li>
-                                 <li>
-                                 Requested item: {{this.seller_product_id}}
-                                 </li> --}}
+
                             </ul>
                             <div class="row">
                                 <div class="col col-md-12 text-center{{!-- col-md-offset-3 --}}">
