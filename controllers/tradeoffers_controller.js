@@ -6,9 +6,10 @@ var router  = express.Router();
 router.get('/offers', function(req, res) {
 
   models.TradeOffer.findAll({
-    // where: {
-    // 	buyer: req.session.user_id
-    // }
+    where: {
+    	status: "offered",
+    	buyer_id: req.session.user_id
+    }
   })
   .then(function(offers) {
     res.render('exchange/trade', {
@@ -66,6 +67,19 @@ router.put('/accept/:buyerid/:sellerid/:buyerproduct/:sellerproduct', function(r
   }, function(rejectedPromiseError){
 
   });
+});
+
+router.put('/deny', function(req,res) {
+	models.TradeOffer.update(
+	{
+		status: "denied"
+	},
+	{
+		where: { id : req.body.trade_id }
+	})
+	.then(function (result) {
+		res.redirect('/');
+	});
 });
 
 module.exports = router;
