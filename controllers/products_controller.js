@@ -56,28 +56,28 @@ router.get('/', function(req, res) {
   });
 });
 
-router.put('/accepted/:buyerid/:sellerid/:buyerproduct/:sellerproduct', function(req,res) {
-  models.Product.update(
-  {
-  	user_id : req.params.sellerid
-  },
-  {
-    where: { id : req.params.buyerproduct }
-  })
-  .then(function (result) {
-  	models.Product.update(
-  	{
-  		user_id : req.params.buyerid
-	},
-	{
-    	where: { id : req.params.sellerproduct }
-  	}).then(function (products){
-  		res.redirect('/');
-  	});
-  }, function(rejectedPromiseError){
+// router.put('/accepted/:buyerid/:sellerid/:buyerproduct/:sellerproduct', function(req,res) {
+//   models.Product.update(
+//   {
+//   	user_id : req.params.sellerid
+//   },
+//   {
+//     where: { id : req.params.buyerproduct }
+//   })
+//   .then(function (result) {
+//   	models.Product.update(
+//   	{
+//   		user_id : req.params.buyerid
+// 	},
+// 	{
+//     	where: { id : req.params.sellerproduct }
+//   	}).then(function (products){
+//   		res.redirect('/');
+//   	});
+//   }, function(rejectedPromiseError){
 
-  });
-});
+//   });
+// });
 
 // router.put('/request/:id', function (req, res) {
 //   models.Product.update(
