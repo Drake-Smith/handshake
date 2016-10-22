@@ -195,6 +195,26 @@ p {
 }
 .each-product {
     float: left;
+    padding: 15px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.each-user-own-product {    
+    float: left;
+    padding: 15px;
+}
+
+/*img:hover .product-info {
+    display: block;
+}*/
+
+.product-info > p {
+    font-size: 12px;
+    color: black;
+}
+.product-info {
+    background-color: white;
 }
 
 

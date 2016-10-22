@@ -38,11 +38,21 @@
                                              Value: {{this.value}}
                                              </li>
                                              <li> --}}
-                                             <div class="each-product">
-                                             <img src="{{this.picture}}" style="width: 200px; height 200px;">
+                                            <div class="each-product">
+                                             <img class="product-img" src="{{this.picture}}" style="width: 200px; height 200px;">
                                              <br>
-                                             <span>Select This Item<input type="radio" name="request" value={{this.id}} data-user={{this.user_id}} data-id={{this.id}}></span>
-                                             </div>
+                                             <span>Select This Item       <input type="radio" name="request" value={{this.id}} data-user={{this.user_id}} data-id={{this.id}}></span>
+                                             {{!-- <div class="product-info" style="display: none"> --}}
+                                             <div class="product-info">
+                                                <p>{{this.name}}</p>
+                                                <p>Category: {{this.category}}</p>
+                                                <p>Condition: {{this.condition}}</p>
+                                                <p>Value: {{this.value}}</p>
+                                            </div>
+                                            </div>
+                                            
+                                    
+
                                              
                                             {{!-- </li> --}}
                                         {{!-- </ul> --}}
@@ -90,11 +100,19 @@
                                             </li>
                                         </ul>
                                     </div>  --}} 
-                                            <div class="each-product">
-                                             <img src="{{this.picture}}" style="width: 200px; height 200px;">
-                                             <br>
-                                            <span>Select Your Item<input type="radio" name="offer" value={{this.id}} data-user={{this.user_id}} data-id={{this.id}}></span>
-                                             </div>
+                            <div class="each-user-own-product">
+                                <img class="product-img"src="{{this.picture}}" style="width: 200px; height 200px;">
+                                <br>
+                                <span>Select This Item       <input type="radio" name="offer" value={{this.id}} data-user={{this.user_id}} data-id={{this.id}}></span>
+                                {{!-- <div class="product-info" style="display: none"> --}}
+                                <div class="product-info">
+                                    <p>{{this.name}}</p>
+                                    <p>Category: {{this.category}}</p>
+                                    <p>Condition: {{this.condition}}</p>
+                                    <p>Value: {{this.value}}</p>
+                                </div>
+
+                            </div>
 
                                     
                                             
