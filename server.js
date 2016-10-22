@@ -12,11 +12,11 @@ var users_controller = require('./controllers/users_controller');
 var products_controller = require('./controllers/products_controller');
 var tradeoffers_controller = require('./controllers/tradeoffers_controller');
 
-var Sequelize = require('sequelize'),
+var Sequelize = require('sequelize')
 if (process.env.JAWSDB_URL) {
     connection = new Sequelize(process.env.JAWSDB_URL);
 } else {
-    connection = new Sequelize('handshake', 'root', 'password', {
+    connection = new Sequelize('handshake', 'andrew', ' ', {
         host: 'localhost',
         dialect: 'mysql',
         port: '3000'
