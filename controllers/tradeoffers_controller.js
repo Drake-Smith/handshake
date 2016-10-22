@@ -26,6 +26,8 @@ router.post('/create', function (req, res) {
 		buyer_product_id: req.body.buyer_product,
 		seller_product_id: req.body.seller_product,
 		status: "offered",
+		offerPicture: req.body.offerPicture,
+		requestPicture: req.body.requestPicture,
 		user_id: req.body.buyer
 	})
 	.then(function() {
