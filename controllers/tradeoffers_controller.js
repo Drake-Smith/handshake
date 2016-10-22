@@ -33,4 +33,39 @@ router.post('/create', function (req, res) {
 
 });
 
+router.put('/accept/:buyerid/:sellerid/:buyerproduct/:sellerproduct', function(req,res) {
+  models.TradeOffer.update(
+  {
+  	status: "accepted"
+  },
+  {
+    where: { id : req.body.trade_id }
+  })
+  .then(function (result) {
+	models.Product.update(
+	{
+		user_id : req.params.sellerid
+	},
+	{
+		where: { id : req.params.buyerproduct }
+	})
+	.then(function (result) {
+		models.Product.update(
+		{
+			user_id : req.params.buyerid
+		},
+			{
+		where: { id : req.params.sellerproduct }
+		}).then(function (products){
+			res.redirect('/');
+		});
+	}, function(rejectedPromiseError){
+
+	});
+  	// res.redirect('/accepted/' + req.params.buyerid + '/' + req.params.sellerid + '/' + req.params.buyerproduct + '/' + req.params.sellerproduct + '?_method=PUT');
+  }, function(rejectedPromiseError){
+
+  });
+});
+
 module.exports = router;
