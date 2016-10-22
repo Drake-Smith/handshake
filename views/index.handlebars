@@ -7,7 +7,7 @@
 {{!-- TRADE MODAL BEGIN --}}
 <!-- Login Modal content-->
    <div class="modal fade trade" id="trade" role="dialog">
-       <div class="modal-dialog modal-sm" role="document">
+       <div class="modal-dialog modal-md" role="document">
 
            <div class="modal-content" style="background-color:#222;">
                <div class="modal-header">
@@ -16,13 +16,19 @@
                </div>
               <div class="panel-body">
                     {{#each offers}}       
-                        <div class="product col col-lg-3">
-                             <ul>
+                        <div class="product col col-md-12">
+                             <ul style="padding:0">
                                 <li>
+                                <div class="col col-md-6 text-center">
+                                 <h1><em>Offer</em></h1>   
                                 <img class="product-img"src="{{this.offerPicture}}" style="width: 200px; height: 200px;">
-                                <img class="product-img"src="{{this.requestPicture}}" style="width: 200px; height: 200px;">   
+                                </div>
+                                <div class="col col-md-6 text-center">
+                                <h1>Item</h1>
+                                <img class="product-img"src="{{this.requestPicture}}" style="width: 200px; height: 200px;">
+                                </div>   
                                 </li>
-                                <li>
+                               {{!--  <li>
                                 Offered by: {{this.buyer_id}}
                                 </li>
                                 <li>
@@ -33,18 +39,30 @@
                                  </li>
                                  <li>
                                  Requested item: {{this.seller_product_id}}
-                                 </li>
+                                 </li> --}}
                             </ul>
-                        </div>
-                        <div class="col-xs-3 text-center">
+                            <div class="row">
+                                <div class="col col-md-12 text-center{{!-- col-md-offset-3 --}}">
+                                    
                             <form method="POST" action="/trade/accept/{{this.buyer_id}}/{{this.seller_id}}/{{this.buyer_product_id}}/{{this.seller_product_id}}?_method=PUT" class="button-size">
                                 <input input type="hidden" type="text" name="trade_id" value={{this.id}}><br>
                                 <button type="submit" class="btn btn-success">Confirm Trade</button>
                             </form>
+                                </div>
+                                </div>
+                            <div class="row">
+
+                                <div class="col col-md-12 text-center{{!-- col-md-offset-3 --}}">
+
                             <form method="POST" action="/trade/deny?_method=PUT" class="button-size">
-                                <input input type="hidden" type="text" name="trade_id" value={{this.id}}><br>
+                                <input input type="hidden" type="text" name="trade_id" value={{this.id}}>
                             <button type="submit" class="btn btn-danger">Deny Trade</button>
                             </form>
+                                </div>
+                                </div>
+
+                            </div>
+
                         </div>     
                     {{/each}}
                     
