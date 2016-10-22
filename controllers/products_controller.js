@@ -38,7 +38,7 @@ router.get('/', function(req, res) {
   });
 });
 
-router.post('/create', function (req, res) {
+router.post('/add', function (req, res) {
  
   models.Product.create({
     name: req.body.name,
