@@ -24,7 +24,8 @@ router.post('/create', function (req, res) {
 		seller_id: req.body.seller,
 		buyer_product_id: req.body.buyer_product,
 		seller_product_id: req.body.seller_product,
-		status: "offered"
+		status: "offered",
+		user_id: req.body.buyer
 	})
 	.then(function() {
 		res.redirect('/');
