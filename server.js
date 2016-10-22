@@ -6,6 +6,7 @@ var session = require('express-session');
 var expressHandleBars = require('express-handlebars');
 var path = require('path');
 
+
 // model controllers
 var users_controller = require('./controllers/users_controller');
 var products_controller = require('./controllers/products_controller');
