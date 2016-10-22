@@ -56,18 +56,11 @@
     {{!--  Add Product Form --}}
     <div class="jumbotron jumbo-market">
         <div class="row">
-
-        {{!-- <div class="col col-sm-12"> --}}
             <div class="col col-sm-12">
-             {{!--    <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title text-center">Marketplace</h3>
-                    </div> --}}
-                    <h1 class="text-center" id="market-font">Marketplace</h1>
-                    {{!-- <div class="panel-body"> --}}
+                <h1 class="text-center" class="market-font">Marketplace</h1>
 
-                        <form method="POST" action="request/{{this.id}}?_method=PUT" class="button-size" id="requestForm">
-                        <div id="fuck">
+                    <form method="POST" action="request/{{this.id}}?_method=PUT" class="button-size" id="requestForm">
+                        <div id="prod-div">
                             {{#each market_products}}       
                                     
                                         <div class="each-product">
@@ -82,24 +75,17 @@
                                                 <p>Value: ${{this.value}}</p>
                                             </div>
                                         </div>
-                                    
                             {{/each}}
                         </div>
-                        </form>
-                    {{!-- </div> --}}
-                {{!-- </div> --}}
+                    </form>
+ 
             </div>
         </div>
 
         <div class="row">
             <div class="col col-sm-12">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title text-center">My Items</h3>
-                    </div>
-                    <div class="panel-body">
-
+                    <h1 class="text-center" class="market-font">My Items</h1>
+  
                         <form method="POST" action="offer/{{this.id}}?_method=PUT" class="button-size" id="offerForm">
                             {{#each owner_products}}      
 
@@ -114,104 +100,21 @@
                                     <p>Condition: {{this.condition}}</p>
                                     <p>Value: ${{this.value}}</p>
                                 </div>
-
                             </div>
-
-                                    
-                                            
-    {{!--                                         <button type="submit" class="btn btn-default">Offer Trade</button> --}}
                                     
                             {{/each}}
                         </form>
-                    </div>
                 </div>
             </div>
 
-            
 
-
-        <div class="row">
-                <div class="col col-sm-4">
+            <div class="row">
+                <div class="col col-sm-6 col-sm-offset-3">
                     <button class="btn btn-success" id="tradeConfirm">Confirm Trade Request</button>
                 </div>
            </div>
-        {{!--      <div class="col-sm-4 col-sm-offset-8">
-                <h4 class="formtext">Add a Product</h4>
+    </div>
 
-
-                <form class="create-update-form" action="/add" method="POST">
-                    <div class="form-group">
-                        <label for="name" class="formlabel">Product Name</label>
-                        <input type="text" class="productinput" id="product-name" name="name">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="category" class="formlabel">Category</label>
-                        {{!-- <input type="text" id="category" name="category"> --}}
-                        <select data-placeholder="" class="chosen-select form-control" id="category" name="category"> 
-                            <option value="" disabled selected hidden>Select Category</option>
-                            <option value="electronics">Electronics</option>
-                            <option value="misc">Music</option>
-                            <option value="home">Home</option>
-                            <option value="sports">Sports</option>
-                            <option value="sports">Collectibles</option>
-                            <option value="sports">Gaming</option>
-                            <option value="misc">Misc</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="description" class="formlabel">Description</label>
-                        <input type="text" class="productinput" id="description" name="description">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="condition" class="formlabel">Condition</label>
-                        <select data-placeholder="" class="chosen-select form-control" id="condition" name="condition">
-                            <option value="" disabled selected hidden>Select Condition</option>
-                            <option value="new">New</option>
-                            <option value="likenew">Like New</option>
-                            <option value="home">Good</option>
-                            <option value="sports">Used</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="value" class="formlabel">Estimated Value $</label>
-                        <input type="text" class="productinput" id="value" name="value">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="picture" class="formlabel">Add Picture URL</label>
-                        <input type="text" class="productinput" id="pic" name="picture">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Add Item</button>
-                </form>
-            </div> --}}
-     
-    
-      
-
-        {{!-- <div class="row">
-            <div class="col col-sm-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title text-center">Items Traded</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            {{#each product}}
-                                    <div class="product col col-lg-6">
-                                        <div class="well">
-                            
-                                        </div>
-                                    </div>
-                            {{/each}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
     </div>
     </div>
 </div>
