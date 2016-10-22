@@ -12,34 +12,19 @@
 
         {{!-- <div class="col col-sm-12"> --}}
             <div class="col col-sm-12">
-                <div class="panel panel-default">
+             {{!--    <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title text-center">Marketplace</h3>
-                    </div>
-                    <div class="panel-body">
+                    </div> --}}
+                    <h1 class="text-center" id="market-font">Marketplace</h1>
+                    {{!-- <div class="panel-body"> --}}
 
                         <form method="POST" action="request/{{this.id}}?_method=PUT" class="button-size" id="requestForm">
+                        <div class="fuck">
                             {{#each market_products}}       
-                                    {{!-- <div class="product col col-lg-3"> --}}
-      {{!--                                    <ul>
-                                            <li>
-                                            Item: {{this.name}}
-                                            </li>
-                                            <li>
-                                            Category: {{this.category}}
-                                            </li>
-                                            <li>
-                                             Description: {{this.description}}
-                                             </li>
-                                             <li>
-                                             Condition: {{this.condition}}
-                                             </li>
-                                             <li>
-                                             Value: {{this.value}}
-                                             </li>
-                                             <li> --}}
-                                            <div class="each-product">
-                                             <img class="product-img" src="{{this.picture}}" style="width: 200px; height 200px;">
+                                    
+                                        <div class="each-product">
+                                             <img class="product-img" src="{{this.picture}}" style="width: 200px; height: 200px;">
                                              <br>
                                              <span>Select This Item       <input type="radio" name="request" value={{this.id}} data-user={{this.user_id}} data-id={{this.id}}></span>
                                              {{!-- <div class="product-info" style="display: none"> --}}
@@ -47,28 +32,19 @@
                                                 <p>{{this.name}}</p>
                                                 <p>Category: {{this.category}}</p>
                                                 <p>Condition: {{this.condition}}</p>
-                                                <p>Value: {{this.value}}</p>
+                                                <p>Value: ${{this.value}}</p>
                                             </div>
-                                            </div>
-                                            
-                                    
-
-                                             
-                                            {{!-- </li> --}}
-                                        {{!-- </ul> --}}
-                                    {{!-- </div>  --}}     
-                                    
-                                            
-                                            {{!-- <button type="submit" class="btn btn-default">Request Trade</button> --}}
+                                        </div>
                                     
                             {{/each}}
+                        </div>
                         </form>
-                    </div>
-                </div>
+                    {{!-- </div> --}}
+                {{!-- </div> --}}
             </div>
         </div>
         <div class="row">
-            <div class="col col-sm-8">
+            <div class="col col-sm-12">
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -78,30 +54,9 @@
 
                         <form method="POST" action="offer/{{this.id}}?_method=PUT" class="button-size" id="offerForm">
                             {{#each owner_products}}      
-                   {{!--                  <div class="product col col-lg-3">
-                                         <ul>
-                                            <li>
-                                            Item: {{this.name}}
-                                            </li>
-                                            <li>
-                                            Category: {{this.category}}
-                                            </li>
-                                            <li>
-                                             Description: {{this.description}}
-                                             </li>
-                                             <li>
-                                             Condition: {{this.condition}}
-                                             </li>
-                                             <li>
-                                             Value: {{this.value}}
-                                             </li>
-                                             <li>
-                                             Picture: {{this.picture}}
-                                            </li>
-                                        </ul>
-                                    </div>  --}} 
+
                             <div class="each-user-own-product">
-                                <img class="product-img"src="{{this.picture}}" style="width: 200px; height 200px;">
+                                <img class="product-img"src="{{this.picture}}" style="width: 200px; height: 200px;">
                                 <br>
                                 <span>Select This Item       <input type="radio" name="offer" value={{this.id}} data-user={{this.user_id}} data-id={{this.id}}></span>
                                 {{!-- <div class="product-info" style="display: none"> --}}
@@ -109,7 +64,7 @@
                                     <p>{{this.name}}</p>
                                     <p>Category: {{this.category}}</p>
                                     <p>Condition: {{this.condition}}</p>
-                                    <p>Value: {{this.value}}</p>
+                                    <p>Value: ${{this.value}}</p>
                                 </div>
 
                             </div>
@@ -125,8 +80,8 @@
             </div>
 
 
-             <div class="col-sm-6">
-                <h3>Add a Product</h3>
+             <div class="col-sm-4">
+                <h4>Add a Product</h4>
 
                 <form class="create-update-form" action="/add" method="POST">
                     <div class="form-group">
