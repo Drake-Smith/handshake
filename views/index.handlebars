@@ -6,6 +6,53 @@
 </div>
 
 <div class="container">
+   {{!--  Add Product Form --}}
+    <div class="row">
+
+        <div class="col col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center">Trade Offers</h3>
+                </div>
+                <div class="panel-body">
+                    {{#each offers}}       
+                        <div class="product col col-lg-3">
+                             <ul>
+                                <li>
+                                Offered by: {{this.buyer_id}}
+                                </li>
+                                <li>
+                                Offered to: {{this.seller_id}}
+                                </li>
+                                <li>
+                                Offered item: {{this.buyer_product_id}}
+                                 </li>
+                                 <li>
+                                 Requested item: {{this.seller_product_id}}
+                                 </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-3 text-center">
+                            <form method="POST" action="/trade/accept/{{this.buyer_id}}/{{this.seller_id}}/{{this.buyer_product_id}}/{{this.seller_product_id}}?_method=PUT" class="button-size">
+                                <input input type="hidden" type="text" name="trade_id" value={{this.id}}><br>
+                                <button type="submit" class="btn btn-succes">Shake Hands</button>
+                            </form>
+                            <form method="POST" action="/trade/deny?_method=PUT" class="button-size">
+                                <input input type="hidden" type="text" name="trade_id" value={{this.id}}><br>
+                            <button type="submit" class="btn btn-warning">Too Slow</button>
+                            </form>
+                        </div>     
+                    {{/each}}
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
     {{!--  Add Product Form --}}
     <div class="jumbotron jumbo-market">
         <div class="row">
