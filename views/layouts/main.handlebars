@@ -43,6 +43,9 @@
                         <li><a href="#trade" data-toggle="modal" 
                         >Trade Offers</a>
                         </li>
+                        <li><a href="#add" data-toggle="modal" 
+                        >Add Item</a>
+                        </li>
                         <li><a href="users/sign-out" action="users/sign-out" method="POST">Sign Out</a>
                         </li>
 
@@ -101,8 +104,8 @@
                 <h2 class="modal-title" style="color:white;font-size:30px;text-align:center"><strong>What is <span style="color:lightgreen">Handshake?</strong></span></h2>
             </div>
             <div class="modal-body" style="color:white;">
-                <h4><span style="color:lightgreen">Handshake</span> is an experiment in collaborative consumption...an attempt to help cool people save money, minimize waste, and bring together a fun sharing community!<br>
-                Why did we start it?<br>
+                <h4><span style="color:lightgreen">Handshake</span> is an experiment in collaborative consumption...an attempt to help cool people save money, minimize waste, and bring together a fun sharing community!<br><br>
+                Why did we start it?<br><br>
                 Because.....<br>
                 </h4>
                 <ul style="font-size: 15px">
@@ -121,6 +124,70 @@
         </div>
       </div>
     </div>
+
+<!-- Add Product Modal -->
+<div class="modal fade signup" id = "add" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <!-- Modal content-->
+        <div class="modal-content"style="background-color:#222;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                <h2 class="modal-title" style="color:lightgreen;"><strong>Add Item</strong></h2>
+
+            </div>
+            <form class="create-update-form" action="/add" method="POST">
+                <div class="trade-create modal-body">
+                    <div class="form-group">
+                        <label for="name" class="formlabel">Product Name</label>
+                        <input type="text" class="productinput" id="product-name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="category" class="formlabel">Category</label>
+                        {{!-- <input type="text" id="category" name="category"> --}}
+                        <select data-placeholder="" class="chosen-select form-control" id="category" name="category"> 
+                            <option value="" disabled selected hidden>Select Category</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="misc">Music</option>
+                            <option value="home">Home</option>
+                            <option value="sports">Sports</option>
+                            <option value="sports">Collectibles</option>
+                            <option value="sports">Gaming</option>
+                            <option value="misc">Misc</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="description" class="formlabel">Description</label>
+                        <input type="text" class="productinput" id="description" name="description">
+                    </div>
+                    <div class="form-group">
+                        <label for="condition" class="formlabel">Condition</label>
+                        <select data-placeholder="" class="chosen-select form-control" id="condition" name="condition">
+                            <option value="" disabled selected hidden>Select Condition</option>
+                            <option value="new">New</option>
+                            <option value="likenew">Like New</option>
+                            <option value="home">Good</option>
+                            <option value="sports">Used</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="value" class="formlabel">Estimated Value $</label>
+                        <input type="text" class="productinput" id="value" name="value">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="picture" class="formlabel">Picture URL</label>
+                        <input type="text" class="productinput" id="pic" name="picture">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-md btn-success" type="submit">Add Item</button>
+                </div>
+            </form>
+          </div>
+      </div>
+  </div>
+</div>
 
 <!-- Login Modal content-->
    <div class="modal fade" id="login" role="dialog">
@@ -210,8 +277,6 @@
 <!-- Bootstrap JS -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="/assets/javascript/logo-hover.js"></script>
-<script src="/assets/javascript/notifiy-min.js"></script>
-<script src="/assets/javascript/product-hover.js"></script>
 <script src="/assets/javascript/app.js"></script>
 
 </html>

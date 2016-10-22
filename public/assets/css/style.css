@@ -221,14 +221,18 @@ p {
    
 }
 .product-info {
-    background-color: white;
-     border-radius: 10px;
+    background-color: #a6bdb7;
+    border-radius: 10px;
 }
 .product-img {
      border-radius: 10px;
 }
 
 #market-font {
+    color: lightgreen;
+}
+
+.greentext {
     color: lightgreen;
 }
 
@@ -244,6 +248,7 @@ p {
     line-height: 26px;
     display:inline-block;
     width:240px;
+    border-radius: 0px;
 
 }
 
