@@ -1,7 +1,9 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var TradeOffer = sequelize.define('TradeOffer', {
-    status: DataTypes.STRING
+    status: {type: DataTypes.STRING},
+    offerPicture: {type: DataTypes.STRING},
+    requestPicture: {type: DataTypes.STRING}
   }, {
     underscored: true,
     freezeTableName: true,
