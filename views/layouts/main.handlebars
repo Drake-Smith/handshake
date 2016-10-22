@@ -40,7 +40,8 @@
                         <li><a href ="#about" data-toggle="modal">About</a>
                         </li>
                         {{#if logged_in}}
-                        <li><a href="trade/offers" action="trade/offers" method="GET">Trade Offers</a>
+                        <li><a href="#trade" data-toggle="modal" 
+                        >Trade Offers</a>
                         </li>
                         <li><a href="users/sign-out" action="users/sign-out" method="POST">Sign Out</a>
                         </li>
@@ -121,7 +122,7 @@
       </div>
     </div>
 
-<!-- Modal content-->
+<!-- Login Modal content-->
    <div class="modal fade" id="login" role="dialog">
        <div class="modal-dialog modal-sm" role="document">
 

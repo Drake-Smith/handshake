@@ -23,7 +23,7 @@ router.get('/', function(req, res) {
     models.TradeOffer.findAll({
       where: {
         status: "offered",
-        buyer_id: req.session.user_id
+        seller_id: req.session.user_id
       }
     })
     .then(function(offers) {
@@ -32,24 +32,24 @@ router.get('/', function(req, res) {
       }
     
 
-    for (var i = 0; i < products.length; i++) {
-      var prod = products[i];
-      if (prod.user_id == req.session.user_id) {
-        ownerProducts.push(prod);
+      for (var i = 0; i < products.length; i++) {
+        var prod = products[i];
+        if (prod.user_id == req.session.user_id) {
+          ownerProducts.push(prod);
+        }
+        else{
+          marketProducts.push(prod);
+        }
       }
-      else{
-        marketProducts.push(prod);
-      }
-    }
-    res.render('index', {
-      user_id: req.session.user_id,
-      email: req.session.user_email,
-      logged_in: req.session.logged_in,
-      owner_products: ownerProducts,
-      market_products: marketProducts,
-      offers: tradeProducts
+      res.render('index', {
+        user_id: req.session.user_id,
+        email: req.session.user_email,
+        logged_in: req.session.logged_in,
+        owner_products: ownerProducts,
+        market_products: marketProducts,
+        offers: tradeProducts
+      });
     });
-  });
   });
 });
 
