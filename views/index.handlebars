@@ -8,15 +8,16 @@
 <!-- Login Modal content-->
    <div class="modal fade trade" id="trade" role="dialog">
        <div class="modal-dialog modal-lg" role="document">
-
            <div class="modal-content" style="background-color:#222;">
                <div class="modal-header">
                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                    <h2 class="modal-title" style="color:lightgreen"><strong>Trade Offers</strong></h2>
                </div>
               <div class="panel-body" id="trade-body">
-                    {{#each offers}}       
+                    {{#each offers}}
+                       
                         <div class="product col col-md-12">
+
                              <ul style="padding:0">
                                 <li>
                                 <div class="col col-md-6 text-center">
@@ -51,12 +52,10 @@
                                 </div>
 
                             </div>
-
                         </div>     
                     {{/each}}
                     
                     </div>
-
            </div>
        </div>
    </div>
