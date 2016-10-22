@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
         // associations can be defined here
 
         User.hasMany(models.Product);
-        User.hasMany(models.Notification);
+        User.hasMany(models.TradeOffer);
       }
     }
   });
