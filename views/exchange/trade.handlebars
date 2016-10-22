@@ -30,7 +30,7 @@
                                 <input input type="hidden" type="text" name="trade_id" value={{this.id}}><br>
                                 <button type="submit" class="btn btn-succes">Shake Hands</button>
                             </form>
-                            <form method="POST" action="/trade/deny/{{this.buyer_id}}/{{this.seller_id}}/{{this.buyer_product_id}}/{{this.seller_product_id}}?_method=PUT" class="button-size">
+                            <form method="POST" action="/trade/deny?_method=PUT" class="button-size">
                                 <input input type="hidden" type="text" name="trade_id" value={{this.id}}><br>
                             <button type="submit" class="btn btn-warning">Too Slow</button>
                             </form>
