@@ -5,11 +5,15 @@ $("#tradeConfirm").on("click", function(){
     var seller_product = $('input[name="request"]:checked', '#requestForm').attr("data-id");
     var buyer_email = $('input[name="offer"]:checked', '#offerForm').attr("data-id");
     var seller_email = $('input[name="request"]:checked', '#requestForm').attr("data-id");
+    var offer_picture = $('input[name="offer"]:checked', '#offerForm').attr("data-picture");
+    var request_picture = $('input[name="request"]:checked', '#requestForm').attr("data-picture");
         $.ajax({
             url: '/trade/create', 
             type: 'POST', 
             dataType: 'json', 
             data: {
+              offerPicture: offer_picture,
+              requestPicture: request_picture,
               buyer: buyer,
               seller: seller,
               buyer_product: buyer_product,

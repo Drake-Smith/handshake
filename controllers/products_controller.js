@@ -5,9 +5,7 @@ var router  = express.Router();
 
 router.get('/', function(req, res) {
 
-  // use the Cat model to find all cats,
-  // and use the include option to grab info from the User model.
-  // This will let us show the cat and it's owner.
+  
   models.Product.findAll({
     include: [ models.User ]
     // where : { id: { $ne: req.session.user_id}}
