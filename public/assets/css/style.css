@@ -232,4 +232,19 @@ p {
     color: lightgreen;
 }
 
+.formlabel,.formtext{
+    width: 120px;
+    display:inline-block;
+    color:white;
+
+}
+
+.form-control, .productinput{
+
+    line-height: 26px;
+    display:inline-block;
+    width:240px;
+
+}
+
     
