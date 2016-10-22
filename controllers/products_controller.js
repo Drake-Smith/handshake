@@ -19,6 +19,19 @@ router.get('/', function(req, res) {
     // This info gets saved to req via the users_controller.js file.
     var ownerProducts = [];
     var marketProducts = [];
+    var tradeProducts = [];
+    models.TradeOffer.findAll({
+      where: {
+        status: "offered",
+        buyer_id: req.session.user_id
+      }
+    })
+    .then(function(offers) {
+      for (var i = 0; i < offers.length; i++) {
+        tradeProducts.push(offers[i]);
+      }
+    
+
     for (var i = 0; i < products.length; i++) {
       var prod = products[i];
       if (prod.user_id == req.session.user_id) {
@@ -33,8 +46,10 @@ router.get('/', function(req, res) {
       email: req.session.user_email,
       logged_in: req.session.logged_in,
       owner_products: ownerProducts,
-      market_products: marketProducts
+      market_products: marketProducts,
+      offers: tradeProducts
     });
+  });
   });
 });
 

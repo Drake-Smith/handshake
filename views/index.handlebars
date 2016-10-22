@@ -51,6 +51,53 @@
    </div>
    {{!-- TRADE MODAL ENDS --}}
 <div class="container">
+   {{!--  Add Product Form --}}
+    <div class="row">
+
+        <div class="col col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center">Trade Offers</h3>
+                </div>
+                <div class="panel-body">
+                    {{#each offers}}       
+                        <div class="product col col-lg-3">
+                             <ul>
+                                <li>
+                                Offered by: {{this.buyer_id}}
+                                </li>
+                                <li>
+                                Offered to: {{this.seller_id}}
+                                </li>
+                                <li>
+                                Offered item: {{this.buyer_product_id}}
+                                 </li>
+                                 <li>
+                                 Requested item: {{this.seller_product_id}}
+                                 </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-3 text-center">
+                            <form method="POST" action="/trade/accept/{{this.buyer_id}}/{{this.seller_id}}/{{this.buyer_product_id}}/{{this.seller_product_id}}?_method=PUT" class="button-size">
+                                <input input type="hidden" type="text" name="trade_id" value={{this.id}}><br>
+                                <button type="submit" class="btn btn-succes">Shake Hands</button>
+                            </form>
+                            <form method="POST" action="/trade/deny?_method=PUT" class="button-size">
+                                <input input type="hidden" type="text" name="trade_id" value={{this.id}}><br>
+                            <button type="submit" class="btn btn-warning">Too Slow</button>
+                            </form>
+                        </div>     
+                    {{/each}}
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
     {{!--  Add Product Form --}}
     <div class="jumbotron jumbo-market">
         <div class="row">
@@ -71,7 +118,7 @@
                                         <div class="each-product">
                                              <img class="product-img" src="{{this.picture}}" style="width: 200px; height: 200px;">
                                              <br>
-                                             <span>Select This Item       <input type="radio" name="request" value={{this.id}} data-user={{this.user_id}} data-id={{this.id}}></span>
+                                             <span class="formtext">Select This Item       <input type="radio" name="request" value={{this.id}} data-user={{this.user_id}} data-id={{this.id}}></span>
                                              {{!-- <div class="product-info" style="display: none"> --}}
                                              <div class="product-info">
                                                 <p>{{this.name}}</p>
@@ -104,7 +151,7 @@
                             <div class="each-user-own-product">
                                 <img class="product-img"src="{{this.picture}}" style="width: 200px; height: 200px;">
                                 <br>
-                                <span>Select This Item       <input type="radio" name="offer" value={{this.id}} data-user={{this.user_id}} data-id={{this.id}}></span>
+                                <span class="formtext">Select This Item       <input type="radio" name="offer" value={{this.id}} data-user={{this.user_id}} data-id={{this.id}}></span>
                                 {{!-- <div class="product-info" style="display: none"> --}}
                                 <div class="product-info">
                                     <p>{{this.name}}</p>
@@ -127,32 +174,35 @@
 
 
              <div class="col-sm-4">
-                <h4>Add a Product</h4>
+                <h4 class="formtext">Add a Product</h4>
 
                 <form class="create-update-form" action="/add" method="POST">
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="product-name" name="name">
+                        <label for="name" class="formlabel">Product Name</label>
+                        <input type="text" class="productinput" id="product-name" name="name">
                     </div>
 
                     <div class="form-group">
-                        <label for="cateogry">Category</label>
+                        <label for="category" class="formlabel">Category</label>
                         {{!-- <input type="text" id="category" name="category"> --}}
                         <select data-placeholder="" class="chosen-select form-control" id="category" name="category"> 
                             <option value="" disabled selected hidden>Select Category</option>
                             <option value="electronics">Electronics</option>
-                            <option value="misc">Misc</option>
+                            <option value="misc">Music</option>
                             <option value="home">Home</option>
                             <option value="sports">Sports</option>
+                            <option value="sports">Collectibles</option>
+                            <option value="sports">Gaming</option>
+                            <option value="misc">Misc</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="description">Description</label>
-                        <input type="text" id="description" name="description">
+                        <label for="description" class="formlabel">Description</label>
+                        <input type="text" class="productinput" id="description" name="description">
                     </div>
 
                     <div class="form-group">
-                        <label for="condition">Condition</label>
+                        <label for="condition" class="formlabel">Condition</label>
                         <select data-placeholder="" class="chosen-select form-control" id="condition" name="condition">
                             <option value="" disabled selected hidden>Select Condition</option>
                             <option value="new">New</option>
@@ -163,13 +213,13 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="value">Estimated Value $</label>
-                        <input type="text" id="value" name="value">
+                        <label for="value" class="formlabel">Estimated Value $</label>
+                        <input type="text" class="productinput" id="value" name="value">
                     </div>
 
                     <div class="form-group">
-                        <label for="picture">Add Picture URL</label>
-                        <input type="text" id="pic" name="picture">
+                        <label for="picture" class="formlabel">Add Picture URL</label>
+                        <input type="text" class="productinput" id="pic" name="picture">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Add Item</button>
