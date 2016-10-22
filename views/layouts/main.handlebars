@@ -10,7 +10,7 @@
 
     {{!-- SEO Optimization --}}
     <meta name="keywords" content="handshake, exchange, craigslist, item swap, item exchange, swap, product swap"/>
-    <meta name="description" content="Handshake - The Item Exchange Marketplace"/>   
+    <meta name="description" content="Handshake - The Item Exchange Marketplace"/>
     <meta charset="UTF-8"/>
 
 </head>
@@ -42,7 +42,7 @@
                         {{#if logged_in}}
                         <li><a href="users/sign-out" action="users/sign-out" method="POST">Sign Out</a>
                         </li>
-                        
+
                         {{else}}
                         <li><a href="#signup" data-toggle="modal">Sign Up</a>
                         </li>
@@ -56,7 +56,7 @@
 
             </div>
           </div>
-          
+
     <div class = "container">
   {{#unless logged_in}}
           <div class="fullscreen-bg">
@@ -65,7 +65,7 @@
             </video>
           </div>
       <div class="main">
-      
+
          <div class="main-area">
             <div class="jumbotron col-md-8 col-md-offset-2" style="background-color:transparent !important">
 
@@ -115,10 +115,10 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-warning" data-dismiss="modal">OK</button>
             </div>
-        </div>   
+        </div>
       </div>
     </div>
-    
+
 <!-- Modal content-->
    <div class="modal fade" id="login" role="dialog">
        <div class="modal-dialog modal-sm" role="document">
@@ -145,8 +145,8 @@
                </form>
            </div>
        </div>
-   </div>    
-    
+   </div>
+
 <!-- Sign Up Modal -->
 <div class="modal fade signup" id = "signup" role="dialog">
     <div class="modal-dialog modal-sm" role="document">
@@ -174,7 +174,7 @@
                     </div>
           <div class="form-group">
                         <label for="phone"style="color:white;">Phone:</label>
-                        <input type="phone" class="form-control" id="phone" name="phone" placeholder="123-456-7890"required>
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="123-456-7890"required>
                     </div>
           <div class="form-group">
                         <label for="address"style="color:white;">Address:</label>
@@ -190,6 +190,14 @@
   </div>
 </div>
 </div>
+
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+
+        <div class="container">
+          <p class = "navbar-text">Site built by Handshake, Inc.</p>
+        </div>
+
+    </div>
 
 {{{body}}}
 </body>
