@@ -1,4 +1,4 @@
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 var models = require('../models');
 var express = require('express');
 var router = express.Router();
@@ -19,7 +19,7 @@ router.get('/sign-out', function(req, res) {
 });
 
 
-//login 
+//login
 router.post('/login', function(req, res) {
 	models.User.findOne({
 		where: {email: req.body.email}
@@ -28,19 +28,18 @@ router.post('/login', function(req, res) {
 		if(user == null) {
 			res.redirect('/users/sign-in')
 		}
-	bcrypt.compare(req.body.password, user.password, function(err, result) {
+		bcrypt.compare(req.body.password, user.password, function(err, result) {
 
 		if(result == true) {
 			console.log("sucessful")
 
 			req.session.logged_in = true;
-			req.session.username = user.username;
+			req.session.username = user.name;
 			req.session.user_id = user.id;
 			req.session.user_email = user.email;
 
 			res.redirect('/');
 		} else {
-			console.log("users/sign-in")
 			res.redirect('/users/sign-in')
 		}
 	});
@@ -62,8 +61,8 @@ router.post('/create', function(req,res) {
 			// then use that salt to hash the user's password.
 			bcrypt.genSalt(10, function(err, salt) {
 					bcrypt.hash(req.body.password, salt, function(err, hash) {
-						
-						
+
+
 						models.User.create({
 							name: req.body.name,
 							email: req.body.email,
@@ -81,15 +80,15 @@ router.post('/create', function(req,res) {
 							// we enter the user's session by setting properties to req.
 
 							// we save the logged in status to the session
-		          req.session.logged_in = true;
-		          // the username to the session
-				  req.session.username = user.username;
-				  // the user id to the session
-		          req.session.user_id = user.id;
-		          // and the user's email.
-		          req.session.user_email = user.email;
+							req.session.logged_in = true;
+							// the username to the session
+							req.session.username = user.name;
+							// the user id to the session
+							req.session.user_id = user.id;
+							// and the user's email.
+							req.session.user_email = user.email;
 
-		          // redirect to home on login
+							// redirect to home on login
 							res.redirect('/')
 						});
 					});

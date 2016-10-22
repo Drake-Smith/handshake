@@ -7,6 +7,9 @@ module.exports = function(sequelize, DataTypes) {
     phone: {type: DataTypes.STRING, allowNull: false},
     address: {type: DataTypes.STRING, allowNull: false},
   }, {
+    underscored: true,
+    freezeTableName: true,
+    tableName: 'users',
     classMethods: {
       associate: function(models) {
         // associations can be defined here

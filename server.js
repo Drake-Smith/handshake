@@ -9,6 +9,7 @@ var path = require('path');
 // model controllers
 var users_controller = require('./controllers/users_controller');
 var products_controller = require('./controllers/products_controller');
+var tradeoffers_controller = require('./controllers/tradeoffers_controller');
 
 
 // express settings
@@ -17,7 +18,8 @@ var app = express();
 app.use(methodOverride('_method'))
 
 // //allow sessions
-app.use(session({ secret: 'app', cookie: { maxAge: 60000 }}));
+app.use(session({ secret: 'app', cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true
+}));
 app.use(cookieParser());
 
 // view engine setup
@@ -29,7 +31,6 @@ app.engine('handlebars', exphbs({
     defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');
-
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -43,6 +44,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', application_controller);
 // app.use('/cats', cats_controller);
 app.use('/users', users_controller);
+app.use('/trade', tradeoffers_controller);
 app.use('/', products_controller);
 
 // catch 404 and forward to error handler
