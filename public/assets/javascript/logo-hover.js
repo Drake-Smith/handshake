@@ -12,5 +12,4 @@ $("document").ready(function(){
 	        $(this).find('.main-description').hide();
 	        $(this).find('.main-area').show();
 	});
-   
 });
