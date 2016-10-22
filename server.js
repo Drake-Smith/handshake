@@ -25,13 +25,13 @@ app.use(cookieParser());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-
+app.set('view engine', 'handlebars');
 //set up handlebars
 var exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({
     defaultLayout: 'main'
 }));
-app.set('view engine', 'handlebars');
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
