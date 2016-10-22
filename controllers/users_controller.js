@@ -40,7 +40,10 @@ router.post('/login', function(req, res) {
 
 			res.redirect('/');
 		} else {
-			res.redirect('/users/sign-in')
+			res.redirect('/users/sign-in');
+			//res.render("Incorrect login. Try again");
+			//res.redirect('/');
+			//put error try again thing here
 		}
 	});
 	});
