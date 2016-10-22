@@ -1,12 +1,13 @@
 {{#if logged_in}}
 <div class="fullscreen-bg">
     <video id="bgVideo" preload="true" autoplay loop muted>
-     <source src="assets/video/Shop.mp4" type="video/mp4">
+        <source src="assets/video/Shop.mp4" type="video/mp4">
     </video>
 </div>
+
 <div class="container">
-   {{!--  Add Product Form --}}
-   <div class="jumbotron jumbo-market">
+    {{!--  Add Product Form --}}
+    <div class="jumbotron jumbo-market">
         <div class="row">
 
         {{!-- <div class="col col-sm-12"> --}}
@@ -19,8 +20,8 @@
 
                         <form method="POST" action="request/{{this.id}}?_method=PUT" class="button-size" id="requestForm">
                             {{#each market_products}}       
-                                    <div class="product col col-lg-3">
-                                         <ul>
+                                    {{!-- <div class="product col col-lg-3"> --}}
+      {{!--                                    <ul>
                                             <li>
                                             Item: {{this.name}}
                                             </li>
@@ -36,15 +37,20 @@
                                              <li>
                                              Value: {{this.value}}
                                              </li>
-                                             <li>
-                                             Picture: {{this.picture}}
-                                            </li>
-                                        </ul>
-                                    </div>      
-                                    <div class="col-xs-3 text-center">
-                                            <input type="radio" name="request" value={{this.id}} data-user={{this.user_id}} data-id={{this.id}}><br>
+                                             <li> --}}
+                                             <div class="each-product">
+                                             <img src="{{this.picture}}" style="width: 200px; height 200px;">
+                                             <br>
+                                             <span>Select This Item<input type="radio" name="request" value={{this.id}} data-user={{this.user_id}} data-id={{this.id}}></span>
+                                             </div>
+                                             
+                                            {{!-- </li> --}}
+                                        {{!-- </ul> --}}
+                                    {{!-- </div>  --}}     
+                                    
+                                            
                                             {{!-- <button type="submit" class="btn btn-default">Request Trade</button> --}}
-                                    </div>
+                                    
                             {{/each}}
                         </form>
                     </div>
@@ -52,7 +58,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col col-sm-6">
+            <div class="col col-sm-8">
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -62,7 +68,7 @@
 
                         <form method="POST" action="offer/{{this.id}}?_method=PUT" class="button-size" id="offerForm">
                             {{#each owner_products}}      
-                                    <div class="product col col-lg-3">
+                   {{!--                  <div class="product col col-lg-3">
                                          <ul>
                                             <li>
                                             Item: {{this.name}}
@@ -83,11 +89,17 @@
                                              Picture: {{this.picture}}
                                             </li>
                                         </ul>
-                                    </div>  
-                                    <div class="col-xs-3 text-center">
-                                            <input type="radio" name="offer" value={{this.id}} data-user={{this.user_id}} data-id={{this.id}}><br>
+                                    </div>  --}} 
+                                            <div class="each-product">
+                                             <img src="{{this.picture}}" style="width: 200px; height 200px;">
+                                             <br>
+                                            <span>Select Your Item<input type="radio" name="offer" value={{this.id}} data-user={{this.user_id}} data-id={{this.id}}></span>
+                                             </div>
+
+                                    
+                                            
     {{!--                                         <button type="submit" class="btn btn-default">Offer Trade</button> --}}
-                                    </div> 
+                                    
                             {{/each}}
                         </form>
                     </div>
@@ -98,7 +110,7 @@
              <div class="col-sm-6">
                 <h3>Add a Product</h3>
 
-                <form class="create-update-form" action="/create" method="POST">
+                <form class="create-update-form" action="/add" method="POST">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="product-name" name="name">
@@ -107,8 +119,8 @@
                     <div class="form-group">
                         <label for="cateogry">Category</label>
                         {{!-- <input type="text" id="category" name="category"> --}}
-                        <select data-placeholder="" class="chosen-select form-control" id="category" name="category">
-                            <option value=""></option>
+                        <select data-placeholder="" class="chosen-select form-control" id="category" name="category"> 
+                            <option value="" disabled selected hidden>Select Category</option>
                             <option value="electronics">Electronics</option>
                             <option value="misc">Misc</option>
                             <option value="home">Home</option>
@@ -123,7 +135,7 @@
                     <div class="form-group">
                         <label for="condition">Condition</label>
                         <select data-placeholder="" class="chosen-select form-control" id="condition" name="condition">
-                            <option value=""></option>
+                            <option value="" disabled selected hidden>Select Condition</option>
                             <option value="new">New</option>
                             <option value="likenew">Like New</option>
                             <option value="home">Good</option>
@@ -145,100 +157,12 @@
                 </form>
             </div>
         </div>
-         </div>
-
-
+    
             <div class="row">
                 <div class="col col-sm-12">
                     <button class="btn btn-success" id="tradeConfirm">Confirm Trade Request</button>
                 </div>
-            </div>
-    {{!--         <div class="col col-sm-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title text-center">Offered</h3>
-                    </div>
-                        {{#each owner_products}}
-                            {{#if this.offered}}
-                                <div class="product col col-lg-3">
-                                     <ul>
-                                        <li>
-                                        Item: {{this.name}}
-                                        </li>
-                                        <li>
-                                        Category: {{this.category}}
-                                        </li>
-                                        <li>
-                                         Description: {{this.description}}
-                                         </li>
-                                         <li>
-                                         Condition: {{this.condition}}
-                                         </li>
-                                         <li>
-                                         Value: {{this.value}}
-                                         </li>
-                                         <li>
-                                         Picture: {{this.picture}}
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-xs-3 text-center">
-                                    <form method="POST" action="undo/offer/{{this.id}}?_method=PUT" class="button-size">
-                                        <input input type="hidden" type="text" name="offer" value={{this.id}}><br>
-                                        <button type="submit" class="btn btn-default">Remove Offer</button>
-                                    </form>
-                                </div> 
-                            {{/if}}
-
-                        {{/each}}
-                    </div>
-                </div>
-            </div>
-
-            <div class="col col-sm-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title text-center">Requested</h3>
-                    </div>
-                        {{#each market_products}}
-                            {{#if this.requested}}
-                                <div class="product col col-lg-3">
-                                     <ul>
-                                        <li>
-                                        Item: {{this.name}}
-                                        </li>
-                                        <li>
-                                        Category: {{this.category}}
-                                        </li>
-                                        <li>
-                                         Description: {{this.description}}
-                                         </li>
-                                         <li>
-                                         Condition: {{this.condition}}
-                                         </li>
-                                         <li>
-                                         Value: {{this.value}}
-                                         </li>
-                                         <li>
-                                         Picture: {{this.picture}}
-                                        </li>
-                                    </ul>
-                                </div> 
-                                <div class="col-xs-3 text-center">
-                                    <form method="POST" action="undo/request/{{this.id}}?_method=PUT" class="button-size">
-                                        <input input type="hidden" type="text" name="request" value={{this.id}}><br>
-                                        <button type="submit" class="btn btn-default">Remove Request</button>
-                                    </form>
-                                </div>
-                            {{/if}}
-                        {{/each}}
-                    </div>
-                </div>
-            </div> --}}
-        {{!-- </div> --}}
-
-
-           
+            </div>         
 
         <div class="row">
             <div class="col col-sm-4">
@@ -260,6 +184,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </div>
 {{/if}}

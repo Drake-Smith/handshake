@@ -45,6 +45,9 @@ $("#tradeConfirm").on("click", function(){
             }
         });
 
+        alert("successful trade request sent");
+
+
      var mailOptions1 = {
         from: '"Handshake 👍" <handshakeapp@yahoo.com>', // sender address 
         to: "iniezen@gmail.com", // list of receivers 
@@ -77,4 +80,5 @@ $("#tradeConfirm").on("click", function(){
           console.log('Message sent: ' + info.response);
       });
    
+
     });
