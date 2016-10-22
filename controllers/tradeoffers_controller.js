@@ -6,9 +6,10 @@ var router  = express.Router();
 router.get('/offers', function(req, res) {
 
   models.TradeOffer.findAll({
-    // where: {
-    // 	buyer: req.session.user_id
-    // }
+    where: {
+    	status: "offered",
+    	buyer_id: req.session.user_id
+    }
   })
   .then(function(offers) {
     res.render('exchange/trade', {
