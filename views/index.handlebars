@@ -71,7 +71,7 @@
                 <h1 class="text-center" id="market-title">Marketplace</h1>
 
                     <form method="POST" action="request/{{this.id}}?_method=PUT" class="button-size" id="requestForm">
-                        <div id="prod-div">
+                        <div id="prod-div" style ="width: auto; height:auto; overflow: auto;white-space: nowrap;">
                             {{#each market_products}}       
                                     
                                         <div class="each-product">
@@ -93,12 +93,14 @@
  
             </div>
         </div>
-
+        </div>
+ <div class="jumbotron jumbo-market">
         <div class="row">
             <div class="col col-sm-12">
                     <h1 class="text-center" id="my-item-title">My Items</h1>
   
                         <form method="POST" action="offer/{{this.id}}?_method=PUT" class="button-size" id="offerForm">
+                        <div id="prod-div" style ="width: auto; height:auto;overflow: auto;white-space: nowrap;">
                             {{#each owner_products}}      
 
                             <div class="each-user-own-product">
@@ -116,6 +118,7 @@
                             </div>
                                     
                             {{/each}}
+                            </div>
                         </form>
                 </div>
             </div>
