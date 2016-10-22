@@ -229,7 +229,10 @@ p {
      border-radius: 10px;
 }
 
-.market-font {
+#market-title {
+    color: lightgreen;
+}
+#my-item-title {
     color: lightgreen;
 }
 

@@ -61,7 +61,7 @@
     <div class="jumbotron jumbo-market">
         <div class="row">
             <div class="col col-sm-12">
-                <h1 class="text-center" class="market-font">Marketplace</h1>
+                <h1 class="text-center" id="market-title">Marketplace</h1>
 
                     <form method="POST" action="request/{{this.id}}?_method=PUT" class="button-size" id="requestForm">
                         <div id="prod-div">
@@ -70,7 +70,7 @@
                                         <div class="each-product">
                                              <img class="product-img" src="{{this.picture}}" style="width: 200px; height: 200px;">
                                              <br>
-                                             <span class="greentext">Select This Item       <input type="radio" name="request" value={{this.id}} data-user={{this.user_id}} data-id={{this.id}} data-picture={{this.picture}}></span>
+                                             <span class="greentext text-center">Select This Item       <input type="radio" name="request" value={{this.id}} data-user={{this.user_id}} data-id={{this.id}} data-picture={{this.picture}}></span>
 
                                              {{!-- <div class="product-info" style="display: none"> --}}
                                              <div class="product-info">
@@ -89,7 +89,7 @@
 
         <div class="row">
             <div class="col col-sm-12">
-                    <h1 class="text-center" class="market-font">My Items</h1>
+                    <h1 class="text-center" id="my-item-title">My Items</h1>
   
                         <form method="POST" action="offer/{{this.id}}?_method=PUT" class="button-size" id="offerForm">
                             {{#each owner_products}}      
@@ -97,7 +97,7 @@
                             <div class="each-user-own-product">
                                 <img class="product-img"src="{{this.picture}}" style="width: 200px; height: 200px;">
                                 <br>
-                                <span class="greentext">Select This Item       <input type="radio" name="offer" value={{this.id}} data-user={{this.user_id}} data-id={{this.id}} data-picture={{this.picture}}></span>
+                                <span class="greentext text-center">Select This Item       <input type="radio" name="offer" value={{this.id}} data-user={{this.user_id}} data-id={{this.id}} data-picture={{this.picture}}></span>
 
                                 {{!-- <div class="product-info" style="display: none"> --}}
                                 <div class="product-info">
@@ -115,8 +115,8 @@
 
 
             <div class="row">
-                <div class="col col-sm-6 col-sm-offset-3">
-                    <button class="btn btn-success" id="tradeConfirm">Confirm Trade Request</button>
+                <div class="col-sm-12 text-center">
+                    <button class="btn btn-success center-block" id="tradeConfirm">Confirm Trade Request</button>
                 </div>
            </div>
     </div>

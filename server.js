@@ -19,7 +19,7 @@ var app = express();
 app.use(methodOverride('_method'))
 
 // //allow sessions
-app.use(session({ secret: 'app', cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true
+app.use(session({ secret: 'app', cookie: { maxAge: null }, resave: true, saveUninitialized: true
 }));
 app.use(cookieParser());
 
