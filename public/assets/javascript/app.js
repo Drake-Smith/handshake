@@ -14,4 +14,5 @@ $("#tradeConfirm").on("click", function(){
               seller_product: seller_product
             }
         });
+        alert("successful trade request sent");
     });

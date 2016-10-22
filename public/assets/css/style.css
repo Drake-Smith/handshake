@@ -135,6 +135,8 @@ p {
 
 .jumbo-market {
     margin-top: 0;
+    opacity: 1;
+    background-color: gray;
 }
 
 #bgVideo {
@@ -190,6 +192,9 @@ p {
     #welcome-logo {
         font-size: 100px;
     }
+}
+.each-product {
+    float: left;
 }
 
 
