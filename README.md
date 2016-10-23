@@ -1,22 +1,31 @@
-# handshake, Inc. (In Development)
-## Description:
-### A market place  trading app which integrates a delivery system from a third party for exchanges from trader to trader.
+# Handshake, Inc. 
+## Intro: <br> Welcome to our sharing community. Trade stuff you no longer use for cool stuff you actually need!<br>Collaborative consumption increases satisfaction, saves precious cash, helps your fellow humans, and decreases waste.<br>Join Handshake now to start trading goods with others and help yourself, your community, and your planet.
 
-## Technologies Used:
-1. JavaScript
-2. NodeJS
-3. RESTful API
-4. ExpressJS Server
-5. SequelizeJS ORM
-6. MySQL Database
-7. HandleBars Templating
-8. BootStrap HTML
-9. SASS
-10. MVC Paradigm
-11. Heroku Deployment
+## Description: <br> Handshake is an experiment in collaborative consumption. It helps people save money, minimize waste, and bring together a fun sharing community!
 
-## Contributers:
-+ Andrew Kil
+###Why did we start it?
+* People often collect too much stuff.
+* That stuff collects too much dust.
+* Other people need your stuff more than you do.
+* You can exchange unused stuff for cooler stuff you will actually use!
+* Save money, help others, and help the planet!
+* It is completely free. No money exchanges hands, ever...
+
+### Technologies Used:
+* JavaScript
+* NodeJS
+* RESTful API
+* ExpressJS Server
+* SequelizeJS ORM
+* MySQL Database
+* HandleBars Templating
+* BootStrap HTML
+* SASS
+* MVC Paradigm
+* Heroku Deployment
+
+### Contributers:
++ Andrew Kil <andrewkil.com> <email@andrewkil.com>
 + Ceejay Varias
 + Guy Pham www.linkedin.com/in/guypham
 + Drake Smith
