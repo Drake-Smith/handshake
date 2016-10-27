@@ -1,5 +1,5 @@
 # Handshake, Inc. 
-##Website <https://nameless-chamber-30572.herokuapp.com/>
+##Website <http://nameless-chamber-30572.herokuapp.com/>
 ## Intro: <br> Welcome to our sharing community. Trade stuff you no longer use for cool stuff you actually need!<br>Collaborative consumption increases satisfaction, saves precious cash, helps your fellow humans, and decreases waste.<br>Join Handshake now to start trading goods with others and help yourself, your community, and your planet.
 
 ## Description: <br> Handshake is an experiment in collaborative consumption. It helps people save money, minimize waste, and bring together a fun sharing community!
@@ -26,7 +26,7 @@
 * Heroku Deployment
 
 ### Contributers:
-+ Andrew Kil <andrewkil.com> <email@andrewkil.com>
++ Andrew Kil http://www.andrewkil.com email@andrewkil.com
 + Ceejay Varias
 + Guy Pham www.linkedin.com/in/guypham
 + Drake Smith
